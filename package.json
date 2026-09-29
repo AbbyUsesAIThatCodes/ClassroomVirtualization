@@ -1,0 +1,21 @@
+{
+  "name": "classroom-virtualization",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "export": "node scripts/export.mjs && node scripts/godot-scene.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "gltf-validator": "2.0.0-dev.3.10",
+    "playwright": "1.58.2"
+  }
+}

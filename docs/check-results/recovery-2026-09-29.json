@@ -1,0 +1,43 @@
+{
+  "checked_date": "2026-09-29",
+  "artifact_version": "0.1.0",
+  "codename": "First Light",
+  "new_build_created": false,
+  "archive_crc": {
+    "files": 117,
+    "bad_entries": 0
+  },
+  "original_member_checks": {
+    "files": 115,
+    "sha256_matches": 115,
+    "crc32_matches": 115,
+    "length_matches": 115
+  },
+  "remote_comparison": {
+    "commit": "2c9128b5f861fc03d12ac2ccca747d21f6ab47f8",
+    "files": 117,
+    "matches": 117
+  },
+  "node_tests": {
+    "command": "npm test",
+    "passed": 6,
+    "failed": 0
+  },
+  "gltf_validator": {
+    "errors": 0,
+    "warnings": 0,
+    "bytes": 11867056
+  },
+  "javascript_syntax": {
+    "files": 14,
+    "passed": 14
+  },
+  "standalone_matches": {
+    "html": true,
+    "glb": true
+  },
+  "browser_runtime": "Not rerun; required Chromium executable absent",
+  "godot_runtime": "Not rerun; Godot executable absent",
+  "github_actions": "Not run for the preservation checkpoints",
+  "deployment": "Not performed"
+}

@@ -1,0 +1,557 @@
+{
+  "version": "0.1.0",
+  "units": "metres",
+  "axis": "Y up; window wall -Z",
+  "dimensions": {
+    "width": 7,
+    "length": 14,
+    "height": 3.6,
+    "nookStart": 4.8,
+    "nookHeight": 2.65
+  },
+  "scaleConfidence": "Estimated from photographs, not measured",
+  "anchors": [
+    {
+      "name": "PlayerSpawn",
+      "position": [
+        0,
+        1.65,
+        4.35
+      ],
+      "role": "camera_spawn",
+      "note": "Eye height, facing -Z"
+    },
+    {
+      "name": "GameAnchor_Lever",
+      "position": [
+        -2.24,
+        0.983,
+        0.3
+      ],
+      "role": "tabletop",
+      "note": "Centre of third wooden workbench; top surface"
+    },
+    {
+      "name": "GameAnchor_Design",
+      "position": [
+        1.05,
+        0.931,
+        -0.8
+      ],
+      "role": "tabletop",
+      "note": "Centre of middle lab table; top surface"
+    },
+    {
+      "name": "GameAnchor_Skimmer",
+      "position": [
+        0,
+        0.015,
+        -1.5
+      ],
+      "role": "floor",
+      "note": "Centre aisle; no implicit race length"
+    },
+    {
+      "name": "ViewBoard_Surface",
+      "position": [
+        3.025,
+        1.79,
+        -1.5
+      ],
+      "role": "display",
+      "note": "Screen centre; faces -X"
+    },
+    {
+      "name": "MakerCorner",
+      "position": [
+        -0.3,
+        1.35,
+        6.4
+      ],
+      "role": "point_of_interest"
+    }
+  ],
+  "views": {
+    "entrance": {
+      "label": "Down the classroom",
+      "position": [
+        0,
+        1.65,
+        4.35
+      ],
+      "target": [
+        0.1,
+        1.5,
+        -6.8
+      ]
+    },
+    "board": {
+      "label": "ViewBoard & tables",
+      "position": [
+        -0.3,
+        1.65,
+        1.1
+      ],
+      "target": [
+        3.25,
+        1.6,
+        -1.5
+      ]
+    },
+    "workshop": {
+      "label": "Engineering benches",
+      "position": [
+        -0.74,
+        1.65,
+        -1.36
+      ],
+      "target": [
+        -3.15,
+        1.1,
+        -2.1
+      ]
+    },
+    "maker": {
+      "label": "Printer corner",
+      "position": [
+        -0.4,
+        1.65,
+        4.4
+      ],
+      "target": [
+        -0.3,
+        1.25,
+        6.8
+      ]
+    },
+    "window": {
+      "label": "From the window",
+      "position": [
+        0,
+        1.65,
+        -5.9
+      ],
+      "target": [
+        0,
+        1.5,
+        5.8
+      ]
+    }
+  },
+  "colliders": [
+    {
+      "name": "Wall_left",
+      "minX": -3.6799999999999997,
+      "maxX": -3.5,
+      "minZ": -7.2,
+      "maxZ": 7.2,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Wall_front",
+      "minX": -3.68,
+      "maxX": 3.68,
+      "minZ": -7.18,
+      "maxZ": -7,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Wall_back",
+      "minX": -3.68,
+      "maxX": 3.68,
+      "minZ": 7,
+      "maxZ": 7.18,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Wall_right_front",
+      "minX": 3.5,
+      "maxX": 3.6799999999999997,
+      "minZ": -7,
+      "maxZ": 1.9000000000000004,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Wall_right_rear",
+      "minX": 3.5,
+      "maxX": 3.6799999999999997,
+      "minZ": 3.3000000000000003,
+      "maxZ": 7,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Prep_side",
+      "minX": 3.4450000000000003,
+      "maxX": 4.695,
+      "minZ": 1.8299999999999998,
+      "maxZ": 1.93,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Prep_side",
+      "minX": 3.4450000000000003,
+      "maxX": 4.695,
+      "minZ": 3.18,
+      "maxZ": 3.28,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Prep_back",
+      "minX": 4.55,
+      "maxX": 4.6499999999999995,
+      "minZ": 1.8499999999999999,
+      "maxZ": 3.25,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Prep_cabinet",
+      "minX": 4.205,
+      "maxX": 4.555,
+      "minZ": 2.05,
+      "maxZ": 3.05,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Workbench_1",
+      "minX": -3.415,
+      "maxX": -1.0650000000000002,
+      "minZ": -4.975,
+      "maxZ": -4.025,
+      "minY": 0,
+      "maxY": 1
+    },
+    {
+      "name": "Stool_red",
+      "minX": -3.0800000000000005,
+      "maxX": -2.68,
+      "minZ": -3.81,
+      "maxZ": -3.4099999999999997,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": -1.8300000000000003,
+      "maxX": -1.4300000000000004,
+      "minZ": -3.81,
+      "maxZ": -3.4099999999999997,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Workbench_2",
+      "minX": -3.415,
+      "maxX": -1.0650000000000002,
+      "minZ": -2.575,
+      "maxZ": -1.625,
+      "minY": 0,
+      "maxY": 1
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": -3.0800000000000005,
+      "maxX": -2.68,
+      "minZ": -1.41,
+      "maxZ": -1.01,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": -1.8300000000000003,
+      "maxX": -1.4300000000000004,
+      "minZ": -1.41,
+      "maxZ": -1.01,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Workbench_3",
+      "minX": -3.415,
+      "maxX": -1.0650000000000002,
+      "minZ": -0.175,
+      "maxZ": 0.7749999999999999,
+      "minY": 0,
+      "maxY": 1
+    },
+    {
+      "name": "Stool_red",
+      "minX": -3.0800000000000005,
+      "maxX": -2.68,
+      "minZ": 0.99,
+      "maxZ": 1.39,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": -1.8300000000000003,
+      "maxX": -1.4300000000000004,
+      "minZ": 0.99,
+      "maxZ": 1.39,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Workbench_4",
+      "minX": -3.415,
+      "maxX": -1.0650000000000002,
+      "minZ": 2.225,
+      "maxZ": 3.1750000000000003,
+      "minY": 0,
+      "maxY": 1
+    },
+    {
+      "name": "Stool_red",
+      "minX": -3.0800000000000005,
+      "maxX": -2.68,
+      "minZ": 3.39,
+      "maxZ": 3.7900000000000005,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": -1.8300000000000003,
+      "maxX": -1.4300000000000004,
+      "minZ": 3.39,
+      "maxZ": 3.7900000000000005,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "LabTable_1",
+      "minX": -0.02499999999999991,
+      "maxX": 2.125,
+      "minZ": -4.4399999999999995,
+      "maxZ": -3.1599999999999997,
+      "minY": 0,
+      "maxY": 0.95
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": 0.22000000000000003,
+      "maxX": 0.6200000000000001,
+      "minZ": -3.01,
+      "maxZ": -2.6099999999999994,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": 1.5000000000000002,
+      "maxX": 1.9000000000000001,
+      "minZ": -3,
+      "maxZ": -2.5999999999999996,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": -0.6099999999999999,
+      "maxX": -0.2099999999999999,
+      "minZ": -3.94,
+      "maxZ": -3.5399999999999996,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "LabTable_2",
+      "minX": -0.02499999999999991,
+      "maxX": 2.125,
+      "minZ": -1.44,
+      "maxZ": -0.16000000000000003,
+      "minY": 0,
+      "maxY": 0.95
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": 0.22000000000000003,
+      "maxX": 0.6200000000000001,
+      "minZ": -0.010000000000000064,
+      "maxZ": 0.38999999999999996,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": 1.5000000000000002,
+      "maxX": 1.9000000000000001,
+      "minZ": -5.551115123125783e-17,
+      "maxZ": 0.39999999999999997,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": -0.6099999999999999,
+      "maxX": -0.2099999999999999,
+      "minZ": -0.94,
+      "maxZ": -0.54,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "LabTable_3",
+      "minX": -0.02499999999999991,
+      "maxX": 2.125,
+      "minZ": 1.5099999999999998,
+      "maxZ": 2.79,
+      "minY": 0,
+      "maxY": 0.95
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": 0.22000000000000003,
+      "maxX": 0.6200000000000001,
+      "minZ": 2.9399999999999995,
+      "maxZ": 3.34,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_red",
+      "minX": 1.5000000000000002,
+      "maxX": 1.9000000000000001,
+      "minZ": 2.9499999999999997,
+      "maxZ": 3.35,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Stool_yellow",
+      "minX": -0.6099999999999999,
+      "maxX": -0.2099999999999999,
+      "minZ": 2.01,
+      "maxZ": 2.41,
+      "minY": 0,
+      "maxY": 0.65
+    },
+    {
+      "name": "Lectern",
+      "minX": 2.3600000000000003,
+      "maxX": 3.08,
+      "minZ": 3.81,
+      "maxZ": 4.25,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "ViewBoard_stand",
+      "minX": 2.6799999999999997,
+      "maxX": 3.46,
+      "minZ": -2.415,
+      "maxZ": -0.585,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Robot_rack",
+      "minX": -3.325,
+      "maxX": -2.755,
+      "minZ": 3.695,
+      "maxZ": 5.145,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Robot_rack",
+      "minX": 2.705,
+      "maxX": 3.2750000000000004,
+      "minZ": 4.155,
+      "maxZ": 5.6049999999999995,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Cabinet",
+      "minX": 2.44,
+      "maxX": 3.1599999999999997,
+      "minZ": -6.79,
+      "maxZ": -6.1499999999999995,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Cabinet",
+      "minX": -3.035,
+      "maxX": -2.2249999999999996,
+      "minZ": 6.225,
+      "maxZ": 6.875,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Printer_counter",
+      "minX": -2.25,
+      "maxX": 1.65,
+      "minZ": 6.234999999999999,
+      "maxZ": 6.965,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Teacher_desk",
+      "minX": -0.47499999999999987,
+      "maxX": 1.575,
+      "minZ": 4.96,
+      "maxZ": 5.760000000000001,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Teacher_chair",
+      "minX": 0.275,
+      "maxX": 0.8250000000000001,
+      "minZ": 5.765,
+      "maxZ": 6.315,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Front_plotter",
+      "minX": -0.09999999999999998,
+      "maxX": 1.2999999999999998,
+      "minZ": -6.710000000000001,
+      "maxZ": -6.17,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Charging_cabinet",
+      "minX": -1.175,
+      "maxX": -0.5249999999999999,
+      "minZ": -6.73,
+      "maxZ": -6.17,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Front_cutter",
+      "minX": -2.71,
+      "maxX": -1.4900000000000002,
+      "minZ": -6.615,
+      "maxZ": -6.145,
+      "minY": 0,
+      "maxY": 2
+    },
+    {
+      "name": "Waste_bin",
+      "minX": 3.1399999999999997,
+      "maxX": 3.5,
+      "minZ": 3.495,
+      "maxZ": 3.865,
+      "minY": 0,
+      "maxY": 0.65
+    }
+  ]
+}

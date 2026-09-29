@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "calls": 378,
+    "triangles": 94166,
+    "start": [
+      0,
+      1.65,
+      4.35
+    ],
+    "stoppedAt": [
+      1.05,
+      1.65,
+      3.019820000000003
+    ]
+  },
+  "browserErrors": [],
+  "mobile": "390×844: movement, touch look, settings, no overflow"
+}

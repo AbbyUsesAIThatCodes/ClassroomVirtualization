@@ -1,0 +1,708 @@
+{
+  "recovered_members": 115,
+  "failed_members": [
+    {
+      "path": "ClassroomVirtualization-v0.1.0/ClassroomVirtualization.git.bundle",
+      "error": "Error -5 while decompressing data: incomplete or truncated stream",
+      "offset": 17310851,
+      "compressed_declared": 0,
+      "compressed_available": 0,
+      "uncompressed_declared": 9502275
+    }
+  ],
+  "source_zip_bytes": 22312976,
+  "central_directory_present": false,
+  "end_directory_present": false,
+  "members": [
+    {
+      "path": "ClassroomVirtualization-v0.1.0/.gitattributes",
+      "bytes": 58,
+      "crc32": "1130c3fd",
+      "sha256": "dd660794c72812f3041880dd5c3d8bc3780926cb034c9f438e5b8334a600fa73"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/.github/workflows/check.yml",
+      "bytes": 628,
+      "crc32": "53e6991d",
+      "sha256": "6f47e3bf3255246cd798c9ce8f023c4f7e94877fddfd256759794b87790f0b9d"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/.github/workflows/pages.yml",
+      "bytes": 698,
+      "crc32": "a262a93d",
+      "sha256": "acebabad26c7cf73ca77303e3676ed40c3669450ec70896b572aab3d83f3a7d3"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/.gitignore",
+      "bytes": 49,
+      "crc32": "aae97b10",
+      "sha256": "ed2691be6b567d8220bfdcb4b83d0d76cad9f61f155d0263c55ba043f9d5b13d"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/README.md",
+      "bytes": 4157,
+      "crc32": "4fa2fd43",
+      "sha256": "d8c2dd44a9a73166cd0439a1ed62571514506b0374165631f7daa671a693e0ba"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/START-HERE.md",
+      "bytes": 991,
+      "crc32": "5a4c7a17",
+      "sha256": "235ecb4abd6a9cc53584382ca7b17fb30dcddc7c589e361a36739a7fa009fefc"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/THIRD_PARTY_NOTICES.md",
+      "bytes": 1919,
+      "crc32": "e978114e",
+      "sha256": "5a8191a2f739aa21932c537fefc219c7932a9720542d9039f878084b245c02c4"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/INTEGRATION.md",
+      "bytes": 5523,
+      "crc32": "fabf47b9",
+      "sha256": "b6fd15a7281023a26a55d6cf1feb3122a030e9424b918badd8d90c1092c39196"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/PHOTO-NOTES.md",
+      "bytes": 2652,
+      "crc32": "4a75788e",
+      "sha256": "222f6fdc11345a5dc4baf4b5ec5d86b5da1483617fb1947986b6d927a5ba33e7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/PR-DESCRIPTION.md",
+      "bytes": 1275,
+      "crc32": "cacd5e2f",
+      "sha256": "c32ccf6e95e60348f7b108bfa50f1315024ab659be6ab05a93392c32630e55c3"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/REPOSITORY-STATUS.md",
+      "bytes": 1455,
+      "crc32": "3c1b4029",
+      "sha256": "6d64e3e6313ade62773f4a73e016272f3f5fe0266df2cff3f9223baf8c1429cc"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/VERIFICATION.md",
+      "bytes": 2878,
+      "crc32": "f9c02bdb",
+      "sha256": "9656b34e28696aabb961066eea6a228fab03c42b7b9958991900b0a2194ca6e7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/check-results/browser.json",
+      "bytes": 283,
+      "crc32": "76f93fdf",
+      "sha256": "9448cf5f6d6eab9d88b83588b2af4a15bca83162e7de4ef0c1d174198474816a"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/check-results/godot.txt",
+      "bytes": 146,
+      "crc32": "bf741931",
+      "sha256": "780e87f0f62fb55b1858db55eda30999cc013aa93f4a880906b10327fcf0d210"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/check-results/offline.json",
+      "bytes": 97,
+      "crc32": "da68d70a",
+      "sha256": "17ec89bcffae02c6f6e7ae631aaeabc39fc16cc456892c1dd959f68a370c9d92"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/classroom-lever-example.jpg",
+      "bytes": 191392,
+      "crc32": "007c6ef7",
+      "sha256": "2b4d9605446410832b149da2ad184b1802548aad74f216bba66bdb9ba29247bd"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/classroom-overview.jpg",
+      "bytes": 154391,
+      "crc32": "b7c02405",
+      "sha256": "e832dd1f6577aa3f50ed70a8040d82a194b7eef41f20c67e3a2b84468e2c218b"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/docs/classroom-preview.jpg",
+      "bytes": 208714,
+      "crc32": "4d3903e6",
+      "sha256": "cc234ae13efe1aedc9bae944d667653174597ac43351c6aaecf6039004cfdb5e"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom-layout.json",
+      "bytes": 10859,
+      "crc32": "9fd59ced",
+      "sha256": "bcd7a82ce3d43071d38d6ea14b0fecd23768585cd293399868b448c0a969aee7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom.glb",
+      "bytes": 11867056,
+      "crc32": "25cb6346",
+      "sha256": "445eee67aa05126d8cb43c3e335690571ebdb0170220cee201630776af70fa8c"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom.glb.import",
+      "bytes": 1043,
+      "crc32": "bb97c24c",
+      "sha256": "a030f44e43f8481d22a7a13775cd7264be3cb239ef516803a12cd8c3a371c8fd"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom.tscn",
+      "bytes": 11053,
+      "crc32": "ac1e56f4",
+      "sha256": "d9acb5112bb14dd85c0c49a1b944568d3da53166235cb989832910f9bb7f11e0"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_0.png",
+      "bytes": 2390184,
+      "crc32": "f7aea787",
+      "sha256": "25e5c05366c3af929c26b71d5ac52dbdd0c7e248a657a3d2b1bdd78663553600"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_0.png.import",
+      "bytes": 1013,
+      "crc32": "56ea1770",
+      "sha256": "3bb400007aeb74758115d553b228e863ca6dff072d4ef9dd5bb2c5cc92d5f557"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_1.png",
+      "bytes": 472240,
+      "crc32": "1b347e9b",
+      "sha256": "9b7330970a96595db3af2632446062acff9666e24f54991b720f278bedda05c9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_1.png.import",
+      "bytes": 1013,
+      "crc32": "e0200459",
+      "sha256": "22fbdf385cf897e9a38ea97f654c662240794e77253a36117593827ce2b42a8e"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_10.png",
+      "bytes": 40960,
+      "crc32": "e40c4506",
+      "sha256": "960224c7807ee848b89637071a28ba6e73b38911f86fae77c286ebe7b1793784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_10.png.import",
+      "bytes": 1016,
+      "crc32": "7bb44a9c",
+      "sha256": "2b16e11b73b70eaf5a03ea95353c32ce4d8bc32905b57184ec2bb96c5a1338cd"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_11.png",
+      "bytes": 14556,
+      "crc32": "82d1e5da",
+      "sha256": "4b1a30b4b08bd588975ad6cc41e3340b69d11b3c29d11ba9142e9511e4b4ba9c"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_11.png.import",
+      "bytes": 1015,
+      "crc32": "be26eebd",
+      "sha256": "c26fe39daf7f7ea0f017527cf0d501e5e9c3417315b25c68935dcc4c8cbdb179"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_12.png",
+      "bytes": 21600,
+      "crc32": "35db2071",
+      "sha256": "149350e1e14155a5b43fa0a101b022f99746769de7dcc0a551c070e0df3560a5"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_12.png.import",
+      "bytes": 1015,
+      "crc32": "bc68dc6d",
+      "sha256": "5767b46570db27f7012a4a36eba34a313d121c33ee1060a09078304184f92441"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_13.png",
+      "bytes": 21532,
+      "crc32": "ef02eb10",
+      "sha256": "d67ff3ec5694547bbacb426c285d3eb2eeb4ff72effc28c7f3bc8e917a75db95"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_13.png.import",
+      "bytes": 1016,
+      "crc32": "9000088f",
+      "sha256": "26ac766bb7f0bc4fec4c2de0915d1b090dc79771409d48d2767d92d99ba27109"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_14.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_14.png.import",
+      "bytes": 1016,
+      "crc32": "7ac0b07e",
+      "sha256": "646d830a3a8307a902b45ba9451e6db8c1810d1e7ef252aa59a5e17da5fdc9b7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_15.png",
+      "bytes": 9848,
+      "crc32": "f63c4b07",
+      "sha256": "adef0f7e0f94c1f3811edb5924c95fd3480ae95fc42f158ae0f075bffa6e5b21"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_15.png.import",
+      "bytes": 1016,
+      "crc32": "06a9d1f4",
+      "sha256": "bd4002a46b0d6d302c5f5dbe17410ce1947fdc95cc7af926e078b0244a041610"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_16.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_16.png.import",
+      "bytes": 1016,
+      "crc32": "4b08e530",
+      "sha256": "1ea2ad12ef5cabfd27128e50c2da4205660d4b8a869bcf0323891d26ecbfa1c1"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_17.png",
+      "bytes": 9848,
+      "crc32": "f63c4b07",
+      "sha256": "adef0f7e0f94c1f3811edb5924c95fd3480ae95fc42f158ae0f075bffa6e5b21"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_17.png.import",
+      "bytes": 1016,
+      "crc32": "01709ce3",
+      "sha256": "c53a856bd7e376c3bc80be2c70891ebb29d7e23b342970f710eaf36d9d39e038"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_18.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_18.png.import",
+      "bytes": 1015,
+      "crc32": "dd6670f2",
+      "sha256": "34a14df89fd1c7bfb8b0b87fe13d06d58fcfa0f77f2a52bad25aff6c62092205"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_19.png",
+      "bytes": 9848,
+      "crc32": "f63c4b07",
+      "sha256": "adef0f7e0f94c1f3811edb5924c95fd3480ae95fc42f158ae0f075bffa6e5b21"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_19.png.import",
+      "bytes": 1015,
+      "crc32": "0f0d4b8f",
+      "sha256": "d7a03c4ed0cb0c0c946d5cc4ce55efd93dd0644957f79fe46371fc083cbb9890"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_2.png",
+      "bytes": 472240,
+      "crc32": "1b347e9b",
+      "sha256": "9b7330970a96595db3af2632446062acff9666e24f54991b720f278bedda05c9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_2.png.import",
+      "bytes": 1013,
+      "crc32": "d7dd008e",
+      "sha256": "4a4f4cf3852bd7c1f9ef66ce6dfeef6d21cf2a0439ddcbc499015b3fd73b9b8f"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_20.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_20.png.import",
+      "bytes": 1016,
+      "crc32": "895953e5",
+      "sha256": "fabecce865cafe6b6ea1e4bf6268a4e44d7b516fe9aa34448e19cc007c3da7dc"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_21.png",
+      "bytes": 9848,
+      "crc32": "f63c4b07",
+      "sha256": "adef0f7e0f94c1f3811edb5924c95fd3480ae95fc42f158ae0f075bffa6e5b21"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_21.png.import",
+      "bytes": 1016,
+      "crc32": "07a5cdc6",
+      "sha256": "884b1ecb59ebfc6b10dc4fbd02988aa2fcfa83771b0502de26ea209f62f9a158"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_22.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_22.png.import",
+      "bytes": 1016,
+      "crc32": "e95a9704",
+      "sha256": "7bf67a82342f7b5b097ffb0ec01cac775d754cee31d9a7eb65e09a31995d8cad"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_23.png",
+      "bytes": 9848,
+      "crc32": "f63c4b07",
+      "sha256": "adef0f7e0f94c1f3811edb5924c95fd3480ae95fc42f158ae0f075bffa6e5b21"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_23.png.import",
+      "bytes": 1016,
+      "crc32": "6b53dc94",
+      "sha256": "51bf9eee497889c58b1ce9b93c584face48ab1ca32422c3721e830bf3ece6a92"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_24.png",
+      "bytes": 9844,
+      "crc32": "89d498fc",
+      "sha256": "36465cd6fcc3d7e582d1d932588755b1bb460e5fe74e639a16e7c94d69240784"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_24.png.import",
+      "bytes": 1016,
+      "crc32": "0cf56d28",
+      "sha256": "190b6390ec6e024219d37eac18885c65876dfdb9e45739a98888ca2770223bc7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_25.png",
+      "bytes": 12664,
+      "crc32": "04a33ada",
+      "sha256": "68aed240be493d8202d7237d70e77adefcf4c0dd8465610e04fcdf97a2d5878c"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_25.png.import",
+      "bytes": 1016,
+      "crc32": "8b3859fb",
+      "sha256": "ca29c94fa7949f03b04531e3e5f1ae2c80e30206657d2aadeb20f26caebfc5a9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_26.png",
+      "bytes": 13200,
+      "crc32": "b4eec3a2",
+      "sha256": "af43c8cf9dc899029996bed3a49d538953e65c11664c6b0a8945ca3d3232701f"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_26.png.import",
+      "bytes": 1016,
+      "crc32": "93002275",
+      "sha256": "45c340fbcb68c69007c4ba3b2562537831647a03df128dac5d82166e3870c5c6"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_27.png",
+      "bytes": 13400,
+      "crc32": "8a7dacf9",
+      "sha256": "cc38eaf40e2a61352f31a9b86ab453fdddfeb75926d6a33c4f7448feec40adc8"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_27.png.import",
+      "bytes": 1016,
+      "crc32": "fd9eaf37",
+      "sha256": "99f555274c9a114ab1099c952e75059794ba099595113db0afae6a9857050b9b"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_28.png",
+      "bytes": 12852,
+      "crc32": "39640093",
+      "sha256": "26e2b7eb7c0338003160c6ab3d953767872e6024d0823d72f350405f63de7485"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_28.png.import",
+      "bytes": 1016,
+      "crc32": "7ffad12b",
+      "sha256": "bc1144dddc90bdfbf34bd15614009169c51268dd9d9e07046e11111175e762a4"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_29.png",
+      "bytes": 13184,
+      "crc32": "8c9c8c26",
+      "sha256": "f849e14502114700a7a85af497d318ce80ae0c4dcc6bd47f295e2d03ce3fb493"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_29.png.import",
+      "bytes": 1016,
+      "crc32": "a3f5dca8",
+      "sha256": "d36a25d2b48ce5d5d43c47c431169186d9d3b735ed1a47075230bc0b7ca7fe91"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_3.png",
+      "bytes": 472240,
+      "crc32": "1b347e9b",
+      "sha256": "9b7330970a96595db3af2632446062acff9666e24f54991b720f278bedda05c9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_3.png.import",
+      "bytes": 1012,
+      "crc32": "2db62af3",
+      "sha256": "23c8a0f08e5c3afbddd07e8819b7045a73f6ca579749049a68abd070abb408e7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_30.png",
+      "bytes": 13496,
+      "crc32": "fafc3b2c",
+      "sha256": "9346deb5f51fd7c2e507d39cf9f5d11d264d6c653c9656a7021e2d63a352d805"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_30.png.import",
+      "bytes": 1016,
+      "crc32": "bd8f780d",
+      "sha256": "1169b5f98ca0376f6c74174e6f8f5295bf97611509eec559eeb71be68797ebf2"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_31.png",
+      "bytes": 16256,
+      "crc32": "8948c67f",
+      "sha256": "640091c5e6922e11793ace5ca04e7d931070622499b9f6bd9974421cdd954777"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_31.png.import",
+      "bytes": 1016,
+      "crc32": "00ab161b",
+      "sha256": "969522f80178299ca5cd3136ccd0fd4f44fb069b9962d9af8f3971662131ced7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_32.png",
+      "bytes": 23656,
+      "crc32": "26e4c571",
+      "sha256": "1f2c5bb0ff3e64ed12a4167bf5dafae9072d1faf1a6596340e8c4a53ac68f6ea"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_32.png.import",
+      "bytes": 1016,
+      "crc32": "6524e559",
+      "sha256": "d6c13231479bd3ec0b1aef7228b58181533e125d8aed31e4b398450dce03c0c6"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_4.png",
+      "bytes": 472240,
+      "crc32": "1b347e9b",
+      "sha256": "9b7330970a96595db3af2632446062acff9666e24f54991b720f278bedda05c9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_4.png.import",
+      "bytes": 1013,
+      "crc32": "9a681cca",
+      "sha256": "635ecd044b7ad7857b722d5b572b7e05c45d170d2f7773e57528d4907347459e"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_5.png",
+      "bytes": 17568,
+      "crc32": "943645c4",
+      "sha256": "fb0380cff2e2aafbafd7539f6a8e39b4a8ad5140bec835bbad7980cecbd54dec"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_5.png.import",
+      "bytes": 1013,
+      "crc32": "e1f41272",
+      "sha256": "1c14082575a96ef3110841948f461177cf02835211cfffa01a14c7cf23828f39"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_6.png",
+      "bytes": 17568,
+      "crc32": "943645c4",
+      "sha256": "fb0380cff2e2aafbafd7539f6a8e39b4a8ad5140bec835bbad7980cecbd54dec"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_6.png.import",
+      "bytes": 1013,
+      "crc32": "cfdbc53b",
+      "sha256": "cb7214aa6c9f20eb79f52b0295fad7e93f8c3d5ffdbec686230b90f14346be99"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_7.png",
+      "bytes": 472240,
+      "crc32": "1b347e9b",
+      "sha256": "9b7330970a96595db3af2632446062acff9666e24f54991b720f278bedda05c9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_7.png.import",
+      "bytes": 1013,
+      "crc32": "9ebb8605",
+      "sha256": "ed2ec575f957442d041af625b90b93fb48d97d24afa1a6a0bf4731f4f5f552d3"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_8.png",
+      "bytes": 29144,
+      "crc32": "0c355af7",
+      "sha256": "d22cf00e1f96eddf8f3aef940ee04cd8116d1223108f663691ec381895681ea0"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_8.png.import",
+      "bytes": 1012,
+      "crc32": "b48aaf44",
+      "sha256": "531fe1a28ff843819b24a7ce39a93425e39b9ccf946c8eafaa3af552410e67d3"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_9.png",
+      "bytes": 153688,
+      "crc32": "2749b945",
+      "sha256": "7b25c65b4bad8dd68ecb0cc60ed3499c9777c077c0bc3805382c18d3054703cd"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/classroom/classroom_9.png.import",
+      "bytes": 1013,
+      "crc32": "651a60f4",
+      "sha256": "17fab14f5226cbf649bebae9fe3fbe529255c9c963b5c406702cc6fb7723d891"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/demo/player.gd",
+      "bytes": 1828,
+      "crc32": "4a114d0c",
+      "sha256": "4b074a9faaab58587fc070bcd78946fb271cec3c955bdc4519cdbb4e8f8125c2"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/demo/player.gd.uid",
+      "bytes": 20,
+      "crc32": "a8f04cd3",
+      "sha256": "9698fb124c03e6d7568de5ee1252bd7f30923106b12d4689bfe15a6138899035"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/demo/verify_scene.gd",
+      "bytes": 708,
+      "crc32": "32c23906",
+      "sha256": "fdd24a2bba0cd58afe9e4693fda3761c34c316c268482b059843b09c796dcd9f"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/demo/verify_scene.gd.uid",
+      "bytes": 20,
+      "crc32": "ff7496a4",
+      "sha256": "7953693877b664cecf88815274538dc403f29ab5ec40dcabf6109e993be5fff9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/demo/walkthrough.tscn",
+      "bytes": 2510,
+      "crc32": "5bf371f7",
+      "sha256": "ec031cedc8955088fcb98de832774552a329f85b5b47601154b0ba97b75d4181"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/godot/project.godot",
+      "bytes": 614,
+      "crc32": "33c2c450",
+      "sha256": "181e69f974b139a239ef9d7f6a2d20507036d666f3a2f14df8f93c11ce264c29"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/index.html",
+      "bytes": 4671,
+      "crc32": "9a436a73",
+      "sha256": "13c819a1ac13b986302d32eafd8f74ecef82e2919ee48c52288409d6eaeeebd9"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/package-lock.json",
+      "bytes": 16812,
+      "crc32": "75d381a4",
+      "sha256": "2b707d547d00fb2c8442eccac275330a3a2e759a1fd83e110939517cc6e2d851"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/package.json",
+      "bytes": 529,
+      "crc32": "2de0370e",
+      "sha256": "7bd9092f77d2d80a68da5c986f83cd516a8aea175ba3168e99c71e16f24fd5a1"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/public/assets/classroom-layout.json",
+      "bytes": 10859,
+      "crc32": "9fd59ced",
+      "sha256": "bcd7a82ce3d43071d38d6ea14b0fecd23768585cd293399868b448c0a969aee7"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/public/assets/classroom.glb",
+      "bytes": 11867056,
+      "crc32": "25cb6346",
+      "sha256": "445eee67aa05126d8cb43c3e335690571ebdb0170220cee201630776af70fa8c"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/scripts/browser-session.mjs",
+      "bytes": 851,
+      "crc32": "90b6ba35",
+      "sha256": "b4a0fa1a93bba7d5a7e7a0d85ba3aea6bf894f5ceb0f81c75db50089be9e5f48"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/scripts/build.mjs",
+      "bytes": 1002,
+      "crc32": "d59de7f0",
+      "sha256": "ef19f49a014e600e1575537928650990e019fa0c94573b589d3446859ca16881"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/scripts/export.mjs",
+      "bytes": 1272,
+      "crc32": "106723a4",
+      "sha256": "c86ba2a00022f47e155e68e6a708e4bccd1f0c1e13a60e9d9993b25be5be0bd8"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/scripts/godot-scene.mjs",
+      "bytes": 1384,
+      "crc32": "c2518d4a",
+      "sha256": "6c4388dfc60fe189799d681b7120b53aa723e9c5284000442e4a1c7750d62a16"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/scripts/serve.mjs",
+      "bytes": 1415,
+      "crc32": "534c0ea4",
+      "sha256": "7c34b8fa0e50d0bd60205f2e77c97a160eb9345a9a9edaa260ee620009a7a487"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/activity-example.js",
+      "bytes": 1053,
+      "crc32": "c3c7a6eb",
+      "sha256": "6e586be28c1f8ac88ffc53af869522271eacb66ddb2216fd6de596b12e8ebfb6"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/app.js",
+      "bytes": 12092,
+      "crc32": "5dcfc21e",
+      "sha256": "94d9249c8c5def53332e6c485c08448517826df6400d7d923979feb4b1ee6439"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/classroom.js",
+      "bytes": 21616,
+      "crc32": "3c555391",
+      "sha256": "5c899c91c8f3f2dc28f3fc9efe04d9e0b408249b83ceeb6aaf58fd6ba738a085"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/collision.js",
+      "bytes": 751,
+      "crc32": "7b263d39",
+      "sha256": "9c6280d4dd6e829897d4a501ec7935d68e784b544d6f2f62c8444acd90be6570"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/layout.js",
+      "bytes": 1758,
+      "crc32": "c9281dd0",
+      "sha256": "d3a2478920e54c3bd1ef5a79eb88706f7c102b6fc46b92a2513f768dae3ebc5a"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/src/textures.js",
+      "bytes": 4659,
+      "crc32": "d68c12e5",
+      "sha256": "862c64a5d70d9bf512a1e05d5c097cd20fb2515b587f0fdc07f2d75c5e400697"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/style.css",
+      "bytes": 7820,
+      "crc32": "8671b200",
+      "sha256": "964a190c1fecdc0f3873782665996797c610c2c9a1a60ce541bba50917832af4"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/tests/asset.test.mjs",
+      "bytes": 1174,
+      "crc32": "8e00edb1",
+      "sha256": "0a0f151ae2c76b4be4df068f38c941bf851482b22374d08ca68635ecd1dca310"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/tests/browser.mjs",
+      "bytes": 5628,
+      "crc32": "50582673",
+      "sha256": "390670725aa75d4c3fddfc6a271ec2db935d353b0c4330c910454d4dc4ed9696"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/tests/collision.test.mjs",
+      "bytes": 1673,
+      "crc32": "312ed00f",
+      "sha256": "4dfedfbfaf8c877b2957e165828520e5cf8773949959bef3582a4ed374ec8847"
+    },
+    {
+      "path": "ClassroomVirtualization-v0.1.0/Classroom-Walkthrough.html",
+      "bytes": 627574,
+      "crc32": "7a4a7e48",
+      "sha256": "e455658de82d403515b51f80aa5ec2629c548ea4b1a18100b6477e14317cc368"
+    }
+  ]
+}
