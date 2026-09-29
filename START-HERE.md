@@ -1,4 +1,4 @@
-# Welcome to your virtual classroom
+# Welcome To Your Virtual Classroom
 
 1. Open `Classroom-Walkthrough.html` in a current browser. It works offline.
 2. Select **Walk into the classroom**. Use WASD or arrow keys to move and drag to
@@ -14,5 +14,5 @@ contains collision boxes and attachment points. See `docs/INTEGRATION.md`.
 
 This is First Light v0.1.0: a stylized reconstruction from your photos, with
 estimated dimensions. Source, verification details and calibration notes are
-included. The GitHub initialization/PR step awaits approval as documented in
-`docs/REPOSITORY-STATUS.md`.
+included. The recovered files are saved in GitHub PR #1; see
+`docs/REPOSITORY-STATUS.md` for the current handoff and verification limits.

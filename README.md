@@ -8,7 +8,7 @@ wall, light strings, robotics shelves, a teacher nook and four printers.
 
 ![The classroom walkthrough](docs/classroom-preview.jpg)
 
-## Walk around
+## Walk Around
 
 The release package contains `Classroom-Walkthrough.html`. Download it and open
 it in a browser with WebGL 2. It is self-contained, works offline, and needs no
@@ -24,7 +24,7 @@ more convenient than opening a downloaded HTML file.
 - **Place a lever example** puts a separate demonstration object on a workbench.
 - On a phone, use the arrow pad and drag the scene to look.
 
-## Use it in an educational game
+## Use It In An Educational Game
 
 | Deliverable | Use |
 |---|---|
@@ -45,6 +45,10 @@ camera, input and simulation. The demo lever is static and is excluded from the
 GLB. The existing lever-game repositories are not modified.
 
 ## Develop
+
+The scripts below are the recovered original pipeline. Before producing a new
+review/release build, implement the pending [build-identity convention](docs/BUILD_IDENTITY.md).
+The saved HTML and GLB are original artifacts, not new builds from this recovery.
 
 Node 22+:
 
@@ -71,7 +75,7 @@ collision tunnelling and sliding, actual browser movement, camera modes,
 activity placement, downloads and touch controls. See
 [verification notes](docs/VERIFICATION.md) for what was tested and remaining limits.
 
-## Publish after review
+## Publish After Review
 
 This repository includes a manual **Deploy Pages** workflow. After the first PR
 is reviewed and merged, choose **Settings → Pages → Source: GitHub Actions**, then
@@ -79,11 +83,13 @@ run **Actions → Deploy Pages → Run workflow** from `main`. The preview uses
 relative URLs, so it works under the repository's Pages subpath. A live site is
 not deployed by the initial implementation.
 
-The initial empty repository requires a small README-only `main` commit before
-a conventional feature PR can be opened. The prepared feature branch is
-`rowan/classroom-first-light`; the model is kept off `main` pending review.
+Recovered source and assets are saved on `rowan/classroom-first-light` in
+[PR #1](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/1).
+See the [September 29 recovery report](docs/recovery/2026-09-29.md) for integrity
+checks, remote checkpoints, and remaining limitations. The implementation stays
+on the feature branch pending review; this recovery does not deploy the site.
 
-## Next calibration pass
+## Next Calibration Pass
 
 A measured room width/length, ceiling height and one bench's dimensions will
 provide a much stronger scale reference than photographs alone. Furniture can

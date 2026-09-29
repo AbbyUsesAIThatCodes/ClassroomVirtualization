@@ -1,32 +1,23 @@
-# Repository handoff
+# Repository Status
 
-Repository: https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization
+Updated September 29, 2026.
 
-The remote was empty when inspected. The local history is prepared as:
+The recovered **0.1.0 First Light** implementation is saved on
+`rowan/classroom-first-light` in [PR #1](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/1).
+`main` retains the starter README while the recovery PR awaits review.
 
-1. `main`: README-only initialization, commit `6053751`.
-2. `rowan/classroom-first-light`: the complete implementation, for a feature PR.
+All 117 repaired-archive files were compared against remote Git blob hashes and
+sizes at commit `2c9128b5f861fc03d12ac2ccca747d21f6ab47f8`: all match.
+Later changes update only handoff documentation and a PR template. The source,
+model, native project, textures, offline HTML, tests, and workflows remain recovered originals.
 
-Automatic approval review rejected pushing the initial `main` commit because it
-would directly update the default branch without explicit authorization and
-outside the PR-first workflow. No remote branch, PR or deployment was created.
-No alternate write route was used.
+See [the recovery report](recovery/2026-09-29.md) for checkpoints and evidence.
+Six Node tests and all 14 JavaScript syntax checks pass. Model validation reports
+zero errors and zero warnings. Browser/Godot runtime checks were not rerun.
 
-Pending user approval: publish the README-only initialization to `main`, push the
-prepared feature branch, then open a PR targeting `main`. The implementation
-would remain on the feature branch until the user reviews and merges it.
+The original bundled Git history is damaged and excluded. No old conversation
+needs to be reopened to obtain the recovered implementation. No deployment or
+merge was performed. The existing manual Pages workflow was not invoked.
 
-The exact initial README contains:
-
-```markdown
-# Classroom Virtualization
-
-A reusable, photo-informed 3D classroom environment for educational games.
-
-Implementation and walkthrough are developed in pull requests. Room dimensions are estimated from reference photographs and can be refined with measured dimensions.
-```
-
-A Git bundle of the two local branches is included in the downloadable package
-as `ClassroomVirtualization.git.bundle` so the prepared history can be recovered.
-It contains source history, not credentials. The standalone walkthrough, portable
-asset, native Godot demo and all source files are usable before publication.
+Before making a new build, implement the pending [build-identity requirements](BUILD_IDENTITY.md).
+The saved v0.1.0 artifacts retain their historical identity.

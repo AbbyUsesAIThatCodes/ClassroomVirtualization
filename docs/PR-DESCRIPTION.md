@@ -1,21 +1,17 @@
-# Add First Light classroom environment and walkthrough
+# Recovery PR Description
 
-Educational games currently use generic surroundings. This change supplies a
-reusable, recognizable reconstruction of the user's real classroom from ten
-reference photos, so activities can share a consistent place.
+Two interrupted conversations left GitHub with only its starter README. This PR
+saves the surviving First Light 0.1.0 source, classroom model, offline walkthrough,
+Godot scene/textures, tests, previews, and original workflows in small remote checkpoints.
 
-The environment includes the room shell, tables and benches, red/yellow stools,
-teaching wall, storage, string lights and four-printer teacher nook. It is shipped
-as an embedded-texture GLB, editable procedural source, a collision/anchor
-manifest, and a native Godot wrapper. The browser walkthrough has first-person
-movement, collision, touch input, camera presets, a cutaway overview and a separate
-lever-placement example. A standalone HTML works offline.
+All 117 files in the repaired package are present at the archive checkpoint with
+matching Git blob hashes and sizes. The 115 original files also match the earlier
+SHA-256/CRC32 manifest. Six Node tests pass; glTF validation reports zero errors
+and warnings; all 14 JavaScript files pass syntax checks.
 
-Validation: six Node tests pass; glTF Validator reports zero errors/warnings;
-desktop/mobile browser interaction checks pass; Godot 4.5.1 imports, instantiates
-and runs the native demo headlessly. See docs/VERIFICATION.md for precise limits.
-Dimensions are photo estimates and should be calibrated with classroom feedback.
-The static lever example is not the existing balance simulation.
+Browser and Godot runtime tests were not rerun. Historical evidence is retained
+and labeled. The damaged original Git bundle is not restored; source content is
+preserved in fresh commits. No merge, deployment, or newly generated build is included.
+The newer build-identity convention is documented as pending for future builds.
 
-No other game repositories are modified. A manual Pages workflow is included
-for publication after review. This change has not been published or merged.
+Full evidence and handoff: [September 29 Recovery](recovery/2026-09-29.md).

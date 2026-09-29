@@ -1,3 +1,9 @@
+# Historical Recovery Notes — September 26, 2026
+
+These notes describe the earlier archive repair. The GitHub transfer status below
+is historical; see [the September 29 report](docs/recovery/2026-09-29.md) for the
+completed repository recovery and fresh checks.
+
 # Classroom Virtualization — recovery notes
 
 Recovered September 26, 2026 from First Light v0.1.0 downloads.

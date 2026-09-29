@@ -1,7 +1,9 @@
 # Verification — First Light 0.1.0
 
-Verified locally on 2026-09-25. Repository initialization and the feature PR remain
-pending approval; there are no claimed GitHub Actions or live-deployment results.
+Historical checks from September 25, 2026, preserved from the original package.
+Fresh September 29 checks and current repository status are recorded in
+[the recovery report](recovery/2026-09-29.md). Browser and Godot results below were
+not rerun during recovery; they must not be presented as fresh validation.
 
 ## Portable asset
 
