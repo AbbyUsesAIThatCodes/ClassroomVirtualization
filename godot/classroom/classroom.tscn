@@ -1,0 +1,359 @@
+[gd_scene load_steps=49 format=3]
+
+[ext_resource type="PackedScene" path="res://classroom/classroom.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="Box_0"]
+size = Vector3(8.3, 0.2, 14.4)
+
+[sub_resource type="BoxShape3D" id="Box_1"]
+size = Vector3(0.18, 2, 14.4)
+
+[sub_resource type="BoxShape3D" id="Box_2"]
+size = Vector3(7.36, 2, 0.18)
+
+[sub_resource type="BoxShape3D" id="Box_3"]
+size = Vector3(7.36, 2, 0.18)
+
+[sub_resource type="BoxShape3D" id="Box_4"]
+size = Vector3(0.18, 2, 8.9)
+
+[sub_resource type="BoxShape3D" id="Box_5"]
+size = Vector3(0.18, 2, 3.7)
+
+[sub_resource type="BoxShape3D" id="Box_6"]
+size = Vector3(1.25, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="Box_7"]
+size = Vector3(1.25, 2, 0.1)
+
+[sub_resource type="BoxShape3D" id="Box_8"]
+size = Vector3(0.1, 2, 1.4)
+
+[sub_resource type="BoxShape3D" id="Box_9"]
+size = Vector3(0.35, 2, 1)
+
+[sub_resource type="BoxShape3D" id="Box_10"]
+size = Vector3(2.35, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="Box_11"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_12"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_13"]
+size = Vector3(2.35, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="Box_14"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_15"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_16"]
+size = Vector3(2.35, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="Box_17"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_18"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_19"]
+size = Vector3(2.35, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="Box_20"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_21"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_22"]
+size = Vector3(2.15, 0.95, 1.28)
+
+[sub_resource type="BoxShape3D" id="Box_23"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_24"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_25"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_26"]
+size = Vector3(2.15, 0.95, 1.28)
+
+[sub_resource type="BoxShape3D" id="Box_27"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_28"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_29"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_30"]
+size = Vector3(2.15, 0.95, 1.28)
+
+[sub_resource type="BoxShape3D" id="Box_31"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_32"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_33"]
+size = Vector3(0.4, 0.65, 0.4)
+
+[sub_resource type="BoxShape3D" id="Box_34"]
+size = Vector3(0.72, 2, 0.44)
+
+[sub_resource type="BoxShape3D" id="Box_35"]
+size = Vector3(0.78, 2, 1.83)
+
+[sub_resource type="BoxShape3D" id="Box_36"]
+size = Vector3(0.57, 2, 1.45)
+
+[sub_resource type="BoxShape3D" id="Box_37"]
+size = Vector3(0.57, 2, 1.45)
+
+[sub_resource type="BoxShape3D" id="Box_38"]
+size = Vector3(0.72, 2, 0.64)
+
+[sub_resource type="BoxShape3D" id="Box_39"]
+size = Vector3(0.81, 2, 0.65)
+
+[sub_resource type="BoxShape3D" id="Box_40"]
+size = Vector3(3.9, 2, 0.73)
+
+[sub_resource type="BoxShape3D" id="Box_41"]
+size = Vector3(2.05, 2, 0.8)
+
+[sub_resource type="BoxShape3D" id="Box_42"]
+size = Vector3(0.55, 2, 0.55)
+
+[sub_resource type="BoxShape3D" id="Box_43"]
+size = Vector3(1.4, 2, 0.54)
+
+[sub_resource type="BoxShape3D" id="Box_44"]
+size = Vector3(0.65, 2, 0.56)
+
+[sub_resource type="BoxShape3D" id="Box_45"]
+size = Vector3(1.22, 2, 0.47)
+
+[sub_resource type="BoxShape3D" id="Box_46"]
+size = Vector3(0.36, 0.65, 0.37)
+
+[node name="Classroom" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="Collisions" type="StaticBody3D" parent="."]
+
+[node name="Floor_0" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.55, -0.1, 0)
+shape = SubResource("Box_0")
+
+[node name="Wall_left_1" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-3.59, 1, 0)
+shape = SubResource("Box_1")
+
+[node name="Wall_front_2" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0, 1, -7.09)
+shape = SubResource("Box_2")
+
+[node name="Wall_back_3" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0, 1, 7.09)
+shape = SubResource("Box_3")
+
+[node name="Wall_right_front_4" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(3.59, 1, -2.55)
+shape = SubResource("Box_4")
+
+[node name="Wall_right_rear_5" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(3.59, 1, 5.15)
+shape = SubResource("Box_5")
+
+[node name="Prep_side_6" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(4.07, 1, 1.88)
+shape = SubResource("Box_6")
+
+[node name="Prep_side_7" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(4.07, 1, 3.23)
+shape = SubResource("Box_7")
+
+[node name="Prep_back_8" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(4.6, 1, 2.55)
+shape = SubResource("Box_8")
+
+[node name="Prep_cabinet_9" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(4.38, 1, 2.55)
+shape = SubResource("Box_9")
+
+[node name="Workbench_1_10" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.24, 0.5, -4.5)
+shape = SubResource("Box_10")
+
+[node name="Stool_red_11" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.88, 0.325, -3.61)
+shape = SubResource("Box_11")
+
+[node name="Stool_yellow_12" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-1.63, 0.325, -3.61)
+shape = SubResource("Box_12")
+
+[node name="Workbench_2_13" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.24, 0.5, -2.1)
+shape = SubResource("Box_13")
+
+[node name="Stool_yellow_14" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.88, 0.325, -1.21)
+shape = SubResource("Box_14")
+
+[node name="Stool_red_15" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-1.63, 0.325, -1.21)
+shape = SubResource("Box_15")
+
+[node name="Workbench_3_16" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.24, 0.5, 0.3)
+shape = SubResource("Box_16")
+
+[node name="Stool_red_17" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.88, 0.325, 1.19)
+shape = SubResource("Box_17")
+
+[node name="Stool_yellow_18" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-1.63, 0.325, 1.19)
+shape = SubResource("Box_18")
+
+[node name="Workbench_4_19" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.24, 0.5, 2.7)
+shape = SubResource("Box_19")
+
+[node name="Stool_red_20" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.88, 0.325, 3.59)
+shape = SubResource("Box_20")
+
+[node name="Stool_red_21" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-1.63, 0.325, 3.59)
+shape = SubResource("Box_21")
+
+[node name="LabTable_1_22" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.05, 0.475, -3.8)
+shape = SubResource("Box_22")
+
+[node name="Stool_yellow_23" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.42, 0.325, -2.81)
+shape = SubResource("Box_23")
+
+[node name="Stool_red_24" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.7, 0.325, -2.8)
+shape = SubResource("Box_24")
+
+[node name="Stool_red_25" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-0.41, 0.325, -3.74)
+shape = SubResource("Box_25")
+
+[node name="LabTable_2_26" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.05, 0.475, -0.8)
+shape = SubResource("Box_26")
+
+[node name="Stool_yellow_27" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.42, 0.325, 0.19)
+shape = SubResource("Box_27")
+
+[node name="Stool_yellow_28" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.7, 0.325, 0.2)
+shape = SubResource("Box_28")
+
+[node name="Stool_red_29" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-0.41, 0.325, -0.74)
+shape = SubResource("Box_29")
+
+[node name="LabTable_3_30" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.05, 0.475, 2.15)
+shape = SubResource("Box_30")
+
+[node name="Stool_yellow_31" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.42, 0.325, 3.14)
+shape = SubResource("Box_31")
+
+[node name="Stool_red_32" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(1.7, 0.325, 3.15)
+shape = SubResource("Box_32")
+
+[node name="Stool_yellow_33" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-0.41, 0.325, 2.21)
+shape = SubResource("Box_33")
+
+[node name="Lectern_34" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(2.72, 1, 4.03)
+shape = SubResource("Box_34")
+
+[node name="ViewBoard_stand_35" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(3.07, 1, -1.5)
+shape = SubResource("Box_35")
+
+[node name="Robot_rack_36" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-3.04, 1, 4.42)
+shape = SubResource("Box_36")
+
+[node name="Robot_rack_37" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(2.99, 1, 4.88)
+shape = SubResource("Box_37")
+
+[node name="Cabinet_38" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(2.8, 1, -6.47)
+shape = SubResource("Box_38")
+
+[node name="Cabinet_39" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.63, 1, 6.55)
+shape = SubResource("Box_39")
+
+[node name="Printer_counter_40" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-0.3, 1, 6.6)
+shape = SubResource("Box_40")
+
+[node name="Teacher_desk_41" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.55, 1, 5.36)
+shape = SubResource("Box_41")
+
+[node name="Teacher_chair_42" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.55, 1, 6.04)
+shape = SubResource("Box_42")
+
+[node name="Front_plotter_43" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(0.6, 1, -6.44)
+shape = SubResource("Box_43")
+
+[node name="Charging_cabinet_44" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-0.85, 1, -6.45)
+shape = SubResource("Box_44")
+
+[node name="Front_cutter_45" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(-2.1, 1, -6.38)
+shape = SubResource("Box_45")
+
+[node name="Waste_bin_46" type="CollisionShape3D" parent="Collisions"]
+position = Vector3(3.32, 0.325, 3.68)
+shape = SubResource("Box_46")
+
+[node name="Anchors" type="Node3D" parent="."]
+
+[node name="PlayerSpawn" type="Marker3D" parent="Anchors"]
+position = Vector3(0, 1.65, 4.35)
+
+[node name="GameAnchor_Lever" type="Marker3D" parent="Anchors"]
+position = Vector3(-2.24, 0.983, 0.3)
+
+[node name="GameAnchor_Design" type="Marker3D" parent="Anchors"]
+position = Vector3(1.05, 0.931, -0.8)
+
+[node name="GameAnchor_Skimmer" type="Marker3D" parent="Anchors"]
+position = Vector3(0, 0.015, -1.5)
+
+[node name="ViewBoard_Surface" type="Marker3D" parent="Anchors"]
+position = Vector3(3.025, 1.79, -1.5)
+
+[node name="MakerCorner" type="Marker3D" parent="Anchors"]
+position = Vector3(-0.3, 1.35, 6.4)
+
