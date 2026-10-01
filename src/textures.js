@@ -13,7 +13,7 @@ export function blockTexture(width, height) {
   const t = canvas(1024, 512, (c, w, h) => {
     c.fillStyle = '#e8e3cc'; c.fillRect(0, 0, w, h);
     const rand = random();
-    for (let i = 0; i < 36000; i++) {c.fillStyle = `rgba(104,98,72,${rand() * .055})`; c.fillRect(rand()*w,rand()*h,2,2);}
+    for (let i = 0; i < 2000; i++) {c.fillStyle = `rgba(104,98,72,${rand() * .055})`; c.fillRect(rand()*w,rand()*h,2,2);}
     for (let row=0;row<8;row++) {
       const y=row*64;c.strokeStyle='#cfcbb7';c.lineWidth=2;c.beginPath();c.moveTo(0,y);c.lineTo(w,y);c.stroke();
       c.strokeStyle='#f4efdf';c.beginPath();c.moveTo(0,y+2);c.lineTo(w,y+2);c.stroke();
@@ -31,7 +31,7 @@ export function floorTexture() {
       c.fillRect(x*w/nx,z*h/nz,w/nx,h/nz);
       c.strokeStyle='rgba(100,91,70,.14)';c.lineWidth=.8;c.strokeRect(x*w/nx,z*h/nz,w/nx,h/nz);
     }
-    for(let i=0;i<160000;i++){c.fillStyle=rand()<.5?'rgba(255,251,224,.15)':'rgba(74,64,46,.12)';c.fillRect(rand()*w,rand()*h,1.5,1.5);}
+    for(let i=0;i<8000;i++){c.fillStyle=rand()<.5?'rgba(255,251,224,.15)':'rgba(74,64,46,.12)';c.fillRect(rand()*w,rand()*h,1.5,1.5);}
   });
 }
 export function woodTexture() {
@@ -53,7 +53,7 @@ export function signTexture(title, lines=[], accent='#3f7770', kind='poster') {
     c.fillStyle='#253d40';c.font='25px sans-serif';lines.forEach((s,i)=>c.fillText(s,34,140+i*42));
     if(kind==='screen'){
       c.strokeStyle=accent;c.lineWidth=7;c.strokeRect(25,110,350,270);c.strokeRect(395,110,348,270);
-      c.fillStyle='#294c4b';c.font='bold 26px sans-serif';c.fillText('ENGINEERING',45,157);c.fillText('DESIGN & MODELING',412,157);
+      c.fillStyle='#294c4b';c.font='bold 26px sans-serif';c.fillText('Engineering',45,157);c.fillText('Design & Modeling',412,157);
       c.font='25px sans-serif';['Test it.','Record it.','Explain it.'].forEach((s,i)=>c.fillText(s,55,215+48*i));
       const x=510,y=242;c.strokeStyle='#5588a0';c.lineWidth=5;
       c.beginPath();c.moveTo(x,y);c.lineTo(x+65,y-36);c.lineTo(x+130,y);c.lineTo(x+65,y+36);c.closePath();c.moveTo(x,y);c.lineTo(x,y+76);c.lineTo(x+65,y+112);c.lineTo(x+130,y+76);c.lineTo(x+130,y);c.moveTo(x+65,y+36);c.lineTo(x+65,y+112);c.stroke();
