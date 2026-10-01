@@ -1,0 +1,9 @@
+{
+  "build": "0.1.1_First-Light_pr-3_build-002_20261001T003328Z_g477fe2d4b138_web-glb-godot-source",
+  "filename": "0.1.1_First-Light_pr-3_build-002_20261001T003328Z_g477fe2d4b138_web-glb-godot-source.zip",
+  "bytes": 29940946,
+  "sha256": "566364353f788ba3ad94dcbbb2e607356c8e754c7bd73f230174ef3afec013b7",
+  "source": "477fe2d4b138410dd033168e5f36360d6f55772b",
+  "delivery": "Playable ZIP and three representative renders saved privately to Library",
+  "checks": ["ZIP CRC passed", "Archived offline HTML matches tested dist file", "Archived native GLB matches tested portable GLB"]
+}
