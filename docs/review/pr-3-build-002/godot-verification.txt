@@ -1,0 +1,4 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+GODOT_OK: native scene instantiated; 44 collision shapes; 6 game anchors; poster 38 and push bar present
+GODOT_BUILD_ID: 0.1.1_First-Light_pr-3_build-002_20261001T003328Z_g477fe2d4b138_web-glb-godot-source

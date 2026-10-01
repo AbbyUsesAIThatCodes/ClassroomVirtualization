@@ -1,4 +1,6 @@
-# Recovery PR Description
+# Historical Recovery PR Description
+
+This is the preserved September 29 description for merged PR #1. See [Current Review](CURRENT-REVIEW.md) for PR #3 and fresh validation.
 
 Two interrupted conversations left GitHub with only its starter README. This PR
 saves the surviving First Light 0.1.0 source, classroom model, offline walkthrough,

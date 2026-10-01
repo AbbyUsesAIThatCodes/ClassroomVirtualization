@@ -1,4 +1,6 @@
-# Photo reconstruction notes
+# Historical Photo Reconstruction Notes
+
+These are the preserved original 0.1.0 interpretation notes. See [Classroom Provenance](CLASSROOM-PROVENANCE.md) and [Poster Art](POSTER-ART.md) for the subsequent source-based refinements and approved wall art.
 
 Reference: ten user-supplied classroom photographs, filenames below. This is a
 manually interpreted, stylized reconstruction. It is not a photogrammetric scan
