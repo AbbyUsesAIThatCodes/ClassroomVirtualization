@@ -1,0 +1,19 @@
+{
+  "desktop": {
+    "calls": 363,
+    "triangles": 90890,
+    "start": [
+      0,
+      1.65,
+      4.35
+    ],
+    "stoppedAt": [
+      1.05,
+      1.65,
+      1.0199999999999994
+    ]
+  },
+  "browserErrors": [],
+  "mobile": "390×844: movement, touch look, settings, no overflow",
+  "build": "0.1.1_First-Light_pr-3_build-002_20261001T003328Z_g477fe2d4b138_web-glb-godot-source"
+}

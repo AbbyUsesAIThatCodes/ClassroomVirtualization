@@ -1,23 +1,17 @@
 # Repository Status
 
-Updated September 29, 2026.
+Updated October 1, 2026.
 
-The recovered **0.1.0 First Light** implementation is saved on
-`rowan/classroom-first-light` in [PR #1](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/1).
-`main` retains the starter README while the recovery PR awaits review.
+## Accepted And Deployed Baseline
 
-All 117 repaired-archive files were compared against remote Git blob hashes and
-sizes at commit `2c9128b5f861fc03d12ac2ccca747d21f6ab47f8`: all match.
-Later changes update only handoff documentation and a PR template. The source,
-model, native project, textures, offline HTML, tests, and workflows remain recovered originals.
+PR #1 merged on September 29, 2026. Main is `1f25638e64861424a52f8bf381cea2a247cfe74e`, containing the recovered **0.1.0 First Light** implementation, not a starter README. Manual Pages run [36637247202](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/actions/runs/36637247202) completed successfully from that revision at 22:04 UTC that day. The earlier recovery report truthfully records that its own author did not deploy; the later deployment supersedes old pending-merge handoff statements.
 
-See [the recovery report](recovery/2026-09-29.md) for checkpoints and evidence.
-Six Node tests and all 14 JavaScript syntax checks pass. Model validation reports
-zero errors and zero warnings. Browser/Godot runtime checks were not rerun.
+## Current Draft
 
-The original bundled Git history is damaged and excluded. No old conversation
-needs to be reopened to obtain the recovered implementation. No deployment or
-merge was performed. The existing manual Pages workflow was not invoked.
+Issue [#2](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/issues/2) / draft PR [#3](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/3), branch `update/canonical-classroom`, proposes **0.1.1 First Light (development)**. It ports the canonical classroom details, adds the approved quote posters and rainbow string lights, and incorporates the owner's playtest corrections: posters around all four walls and the south door in the southwest corner. Read [Current Review](CURRENT-REVIEW.md) for exact source, identity, format status and fresh verification.
 
-Before making a new build, implement the pending [build-identity requirements](BUILD_IDENTITY.md).
-The saved v0.1.0 artifacts retain their historical identity.
+The task is review-only: no merge, deployment, workflow dispatch, main push, Pages configuration change or other-repository write. Draft Actions jobs skip; local checks provide evidence. No private classroom photos or student data are included. The supplied poster PDF stays private; its approved finished artwork is documented in [Poster Art](POSTER-ART.md).
+
+## Preserved History
+
+All 117 repaired-archive files were compared against remote hashes and sizes at `2c9128b5f861fc03d12ac2ccca747d21f6ab47f8`; original assets and historical evidence remain available at that revision and the accepted baseline. The original bundled Git history was damaged and excluded. New artifacts do not retroactively acquire identities for historical builds. See [Recovery](recovery/2026-09-29.md) and [Build Identity](BUILD_IDENTITY.md).

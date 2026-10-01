@@ -1,0 +1,4 @@
+Godot Engine v4.5.1.stable.official.f62fdbde1 - https://godotengine.org
+
+GODOT_OK: native scene instantiated; 47 collision shapes; 6 game anchors; 38 inward-facing posters on all walls; southwest rear door; north door unchanged
+GODOT_BUILD_ID: 0.1.1_First-Light_pr-3_build-004_20261001T014014Z_g28e31ff0fbf0_web-glb-godot-source

@@ -6,3 +6,8 @@
 @media(max-height:560px){.welcome{top:95px;transform:none;width:310px;padding:15px}.welcome h2{margin:9px 0;font-size:22px}.welcome .small{display:none}.masthead{top:14px}.subheading{display:none}#map-panel{top:88px}.panel{bottom:96px;max-height:calc(100dvh - 116px)}#touch-pad{bottom:111px}.view-caption{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .mode-overview .masthead{color:#193e34;text-shadow:none}.mode-overview .brand-mark{color:#f3f5e9}.mode-overview .edition{color:#f3f5e9}.mode-overview footer{color:#24473a;text-shadow:none}
+
+/* A selectable, wrapping build label with reserved space below the controls. */
+#build-identity{position:absolute;bottom:5px;left:12px;right:12px;z-index:5;text-align:center;font:10px/1.3 ui-monospace,monospace;overflow-wrap:anywhere;color:#f1f6ed;background:#15372feb;border-radius:5px;padding:4px 7px;user-select:text;pointer-events:auto}footer{bottom:48px}.dock{bottom:70px}.panel{bottom:143px}.view-caption{bottom:150px}#touch-pad{bottom:162px}
+@media(max-width:700px){#build-identity{font-size:9px}footer{display:none}.dock{bottom:66px}.panel{bottom:141px}#touch-pad{bottom:160px}}
+@media(pointer:coarse){.view-caption{bottom:310px}}

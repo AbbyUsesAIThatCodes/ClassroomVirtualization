@@ -1,0 +1,32 @@
+{
+  "attempts": [
+    {
+      "scope": "pr-3",
+      "ordinal": 1,
+      "revision": "d278516b4936631521133febbf06611f67b619b8",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
+    },
+    {
+      "scope": "pr-3",
+      "ordinal": 2,
+      "revision": "477fe2d4b138410dd033168e5f36360d6f55772b",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
+    },
+    {
+      "scope": "pr-3",
+      "ordinal": 3,
+      "revision": "6b3cc9012f7d2e9e8f38c8a656858c041b0909d4",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
+    },
+    {
+      "scope": "pr-3",
+      "ordinal": 4,
+      "revision": "28e31ff0fbf06ee5fd9fe58cb499f0ef0d757f9a",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
+    }
+  ]
+}

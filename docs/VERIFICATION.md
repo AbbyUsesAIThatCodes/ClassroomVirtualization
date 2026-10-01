@@ -1,5 +1,7 @@
 # Verification — First Light 0.1.0
 
+For fresh 0.1.1 verification, see [Current Review](CURRENT-REVIEW.md).
+
 Historical checks from September 25, 2026, preserved from the original package.
 Fresh September 29 checks and current repository status are recorded in
 [the recovery report](recovery/2026-09-29.md). Browser and Godot results below were

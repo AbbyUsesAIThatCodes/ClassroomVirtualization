@@ -3,3 +3,5 @@ dist/
 .godot/
 artifacts/
 .DS_Store
+review-packages/
+build/allocator.lock

@@ -1,3 +1,6 @@
+import { BUILD, localExportIdentity } from './build-info.js';
+import { postersReady } from './posters.js';
+await postersReady;
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
@@ -7,6 +10,9 @@ import { VIEWS, ROOM, ANCHORS } from './layout.js';
 import { moveWithCollisions } from './collision.js';
 
 const $=id=>document.getElementById(id),canvas=$('viewport');
+$('build-identity').textContent=BUILD.id;
+$('edition-version').textContent='v'+BUILD.version;
+$('download-glb').download=BUILD.id+'.glb';
 let renderer;
 try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});}catch(error){$('error').hidden=false;throw error;}
 renderer.setPixelRatio(Math.min(devicePixelRatio,1.6));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
@@ -90,13 +96,13 @@ function frame(time){const dt=Math.min((time-lastTime)/1000,.05);lastTime=time;
 requestAnimationFrame(frame);
 
 // Export a clean, fully visible environment regardless of preview UI state.
-async function exportGLB(){const clean=createClassroom().root;const data=await new GLTFExporter().parseAsync(clean,{binary:true,onlyVisible:true});clean.traverse(o=>{o.geometry?.dispose();});return data;}
-async function downloadGLB(){const data=await exportGLB();const url=URL.createObjectURL(new Blob([data],{type:'model/gltf-binary'}));const a=document.createElement('a');a.href=url;a.download='NCH-Classroom-v0.1.0.glb';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+async function exportGLB(manifest=BUILD){const clean=createClassroom().root;clean.userData.build=manifest;const data=await new GLTFExporter().parseAsync(clean,{binary:true,onlyVisible:true});clean.traverse(o=>{o.geometry?.dispose();});return data;}
+async function downloadGLB(manifest=BUILD){const data=await exportGLB(manifest);const url=URL.createObjectURL(new Blob([data],{type:'model/gltf-binary'}));const a=document.createElement('a');a.href=url;a.download=manifest.id+'.glb';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);}
 if(location.protocol==='file:'){
-  $('download-glb').onclick=async e=>{e.preventDefault();notice('Preparing your classroom scene…');try{await downloadGLB();notice('Classroom scene exported.');}catch{notice('The scene could not be exported on this device.');}};
-  $('download-layout').onclick=e=>{e.preventDefault();const data={version:'0.1.0',units:'metres',dimensions:ROOM,scaleConfidence:'Estimated from photographs, not measured',anchors:ANCHORS,views:VIEWS,colliders};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='classroom-layout.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);};
+  $('download-glb').onclick=async e=>{e.preventDefault();notice('Preparing your classroom scene…');try{await downloadGLB(localExportIdentity('glb'));notice('Classroom scene exported.');}catch{notice('The scene could not be exported on this device.');}};
+  $('download-layout').onclick=e=>{e.preventDefault();const data={version:BUILD.version,build:localExportIdentity('layout'),units:'metres',dimensions:ROOM,scaleConfidence:'Estimated from photographs, not measured',anchors:ANCHORS,views:VIEWS,colliders};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=data.build.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);};
 }
 // Build and QA hooks are enabled only on loopback with an explicit query flag.
 if(['127.0.0.1','localhost'].includes(location.hostname)&&new URLSearchParams(location.search).has('qa')){
-  window.classroomQA={ready:true,goTo,switchMode,downloadGLB,getState:()=>({mode,position:camera.position.toArray(),yaw,pitch,colliders,anchors:Object.fromEntries(Object.entries(anchors).map(([k,v])=>[k,v.position.toArray()])),calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,ceiling:groups.Ceiling.visible}),setPose:(position,target)=>{camera.position.fromArray(position);lookAt(target);},exportGLB};
+  window.classroomQA={build:BUILD,room:classroom.root,ready:true,goTo,switchMode,downloadGLB,getState:()=>({mode,position:camera.position.toArray(),yaw,pitch,colliders,anchors:Object.fromEntries(Object.entries(anchors).map(([k,v])=>[k,v.position.toArray()])),calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,ceiling:groups.Ceiling.visible}),setPose:(position,target)=>{camera.position.fromArray(position);lookAt(target);},exportGLB};
 }

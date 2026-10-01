@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { validateBytes } from 'gltf-validator';
-import { ANCHORS } from '../src/layout.js';
+import { ANCHORS, POSTER_LAYOUT, SOUTH_DOOR } from '../src/layout.js';
 test('GLB validates, embeds resources, preserves anchors, and matches Godot copy',async()=>{
   const data=await readFile('public/assets/classroom.glb');
   const report=await validateBytes(new Uint8Array(data),{uri:'classroom.glb',maxIssues:20});
@@ -12,6 +12,21 @@ test('GLB validates, embeds resources, preserves anchors, and matches Godot copy
   assert.ok(json.images.every(i=>i.bufferView!==undefined),'all textures must be embedded');
   assert.ok(json.buffers.every(b=>!b.uri),'no external buffer');
   assert.ok(!json.nodes.some(n=>n.name==='ExampleLeverActivity'),'game example must not leak into asset');
+  assert.equal(json.nodes.filter(n=>/^Desk_Pair_\d_\d$/.test(n.name)).length,4);
+  assert.equal(json.nodes.filter(n=>/^QuotePoster_\d\d$/.test(n.name)).length,38);
+  assert.ok(!json.nodes.some(n=>n.name==='QuotePoster_39'));
+  assert.ok(json.nodes.some(n=>n.name==='CurvedHose'));
+  assert.equal(json.materials.filter(m=>m.name.startsWith('Fairy_bulb_')).length,6);
+  const layout=JSON.parse(await readFile('public/assets/classroom-layout.json','utf8'));
+  const room=json.nodes.find(n=>n.name==='NCH_Classroom');
+  assert.deepEqual(room.extras.build,layout.build);
+  assert.deepEqual(layout.build,JSON.parse(await readFile('godot/build-manifest.json','utf8')));
+  assert.equal(layout.colliders.length,46);
+  const position=n=>n.matrix?n.matrix.slice(12,15):(n.translation||[0,0,0]);
+  for(const p of POSTER_LAYOUT){const n=json.nodes.find(n=>n.name==='QuotePoster_'+String(p.page).padStart(2,'0'));assert.deepEqual(position(n),[p.x,p.y,p.z]);assert.equal(n.extras.cardinal,p.cardinal);}
+  assert.deepEqual(position(json.nodes.find(n=>n.name==='RearExitDoor')),[SOUTH_DOOR.x,0,SOUTH_DOOR.z]);
+  assert.deepEqual(position(json.nodes.find(n=>n.name==='FrontExitDoor')),[-2.15,0,-6.96]);
+  assert.deepEqual(json.nodes.filter(n=>n.name?.startsWith('SouthWall')).map(n=>n.name).sort(),['SouthWallEastSpan','SouthWallLintel','SouthWallWestPier']);
   assert.deepEqual(data,await readFile('godot/classroom/classroom.glb'));
   console.log(`GLB: ${report.issues.numErrors} errors, ${report.issues.numWarnings} warnings; ${data.length} bytes`);
 });

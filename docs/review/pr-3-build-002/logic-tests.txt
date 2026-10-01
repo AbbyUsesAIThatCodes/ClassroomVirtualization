@@ -1,0 +1,17 @@
+GLB: 0 errors, 0 warnings; 11958296 bytes
+Γ£ö GLB validates, embeds resources, preserves anchors, and matches Godot copy (108.9416ms)
+Γ£ö concurrent reservations are unique, durable, per scope, and retain failed attempts (261.5851ms)
+Γ£ö walk cannot tunnel through a thin wall, even on a very large step (0.3901ms)
+Γ£ö diagonal movement slides along a wall instead of crossing it (0.3145ms)
+Γ£ö circle collision allows corners without treating the avatar as a square (0.1302ms)
+Γ£ö every viewpoint starts outside furniture and walls (0.7328ms)
+Γ£ö activity anchors sit on their intended table surfaces (0.1319ms)
+Γ£ö poster atlas embeds the same bytes and maps finished pages once within bounds (4.1051ms)
+Γä╣ tests 8
+Γä╣ suites 0
+Γä╣ pass 8
+Γä╣ fail 0
+Γä╣ cancelled 0
+Γä╣ skipped 0
+Γä╣ todo 0
+Γä╣ duration_ms 413.2659

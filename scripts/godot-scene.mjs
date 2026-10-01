@@ -1,4 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
+export async function generateGodotScene(){
 const manifest=JSON.parse(await readFile('public/assets/classroom-layout.json','utf8'));
 const boxes=[{name:'Floor',minX:-3.6,maxX:4.7,minZ:-7.2,maxZ:7.2,minY:-.2,maxY:0},...manifest.colliders];
 const vec=values=>'Vector3('+values.map(x=>Number(x.toFixed(5))).join(', ')+')';
@@ -10,3 +11,5 @@ text+='[node name="Anchors" type="Node3D" parent="."]\n\n';
 manifest.anchors.forEach(a=>{text+=`[node name="${a.name}" type="Marker3D" parent="Anchors"]\nposition = ${vec(a.position)}\n\n`;});
 await writeFile('godot/classroom/classroom.tscn',text);
 console.log('Generated native Godot scene with '+boxes.length+' box colliders and '+manifest.anchors.length+' anchors.');
+}
+if(process.argv[1]?.endsWith('godot-scene.mjs'))throw new Error('Use npm run export so the Godot scene shares its export manifest.');

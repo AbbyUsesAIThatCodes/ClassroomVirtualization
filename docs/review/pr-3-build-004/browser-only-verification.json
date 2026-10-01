@@ -1,0 +1,23 @@
+{
+  "build": "0.1.1_First-Light_pr-3_build-004_20261001T014014Z_g28e31ff0fbf0_web-glb-godot-source",
+  "zipBytes": 1214074,
+  "zipSha256": "133d6593919e4ef72793c5230010db80ce56d9eb82966081fab7c5346aed1ad7",
+  "htmlSha256": "e5497063f2ad2f2abb80c7e5f3f1300760ff2e17e789c251eda2188fd8791900",
+  "offline": true,
+  "browser": "Microsoft Edge / Playwright",
+  "viewports": [
+    "1280x800",
+    "390x844"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "httpRequests": [],
+  "checks": [
+    "Extracted HTML matches exact tested runtime SHA-256",
+    "Original full-resolution atlas decoded before initialization",
+    "Identity matches original manifest",
+    "Overview, walk, viewpoints, optional activity and input handlers operate",
+    "Phone controls and layout fit",
+    "All runtime assets resolve with network disabled"
+  ]
+}

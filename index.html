@@ -5,14 +5,14 @@
   <main id="app" aria-label="Interactive 3D classroom">
     <canvas id="viewport" tabindex="0" aria-label="3D classroom. Drag to look; use W A S D to walk. Press Escape to release mouse."></canvas>
     <header class="masthead">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">⌂</span><div><p class="eyebrow">NORTH COLLEGE HILL · GREAT OAKS</p><h1>Our classroom<span class="title-dot">.</span></h1><p class="subheading">A familiar place. A new perspective.</p></div></div>
-      <div class="edition"><span class="status-dot"></span>FIRST LIGHT <span>v0.1</span></div>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">⌂</span><div><p class="eyebrow">NORTH COLLEGE HILL · GREAT OAKS</p><h1>Our Classroom<span class="title-dot">.</span></h1><p class="subheading">A familiar place. A new perspective.</p></div></div>
+      <div class="edition"><span class="status-dot"></span>FIRST LIGHT <span id="edition-version">Development</span></div>
     </header>
     <aside class="welcome" id="welcome"><p class="eyebrow">COME ON IN</p><h2>You know this room.</h2><p>Walk between the benches, look up at the lights, and visit the maker corner.</p><button id="start" class="primary">Walk into the classroom <span aria-hidden="true">↗</span></button><p class="small">WASD to move · drag to look<br>Touch controls work on phones, too.</p><button id="dismiss" class="text-button">Just look around</button></aside>
-    <div class="view-caption"><span class="caption-line"></span><span id="view-name">Down the classroom</span></div>
+    <div class="view-caption"><span class="caption-line"></span><span id="view-name">Down The Classroom</span></div>
     <aside id="map-panel" aria-label="Classroom floor plan"><canvas id="minimap" width="180" height="310" aria-label="Mini map showing current position"></canvas><div>WINDOW <span>↑</span></div></aside>
     <section id="settings" class="panel" hidden aria-label="Scene settings">
-      <div class="panel-title"><h2>Make it yours</h2><button id="close-settings" aria-label="Close scene settings">×</button></div>
+      <div class="panel-title"><h2>Make It Yours</h2><button id="close-settings" aria-label="Close scene settings">×</button></div>
       <label><span>Ceiling</span><input id="ceiling" type="checkbox" checked></label>
       <label><span>String lights</span><input id="lights" type="checkbox" checked></label>
       <label><span>Room details</span><input id="details" type="checkbox" checked></label>
@@ -28,12 +28,13 @@
     <div id="reticle" hidden aria-hidden="true">+</div>
     <div id="touch-pad" aria-label="Movement controls"><button data-move="KeyW" aria-label="Move forward">↑</button><div><button data-move="KeyA" aria-label="Move left">←</button><button data-move="KeyS" aria-label="Move backward">↓</button><button data-move="KeyD" aria-label="Move right">→</button></div></div>
     <nav class="dock" aria-label="Walkthrough controls">
-      <div class="segmented"><button id="walk" class="selected" aria-pressed="true">Walk</button><button id="overview" aria-pressed="false">Room overview</button></div>
+      <div class="segmented"><button id="walk" class="selected" aria-pressed="true">Walk</button><button id="overview" aria-pressed="false">Room Overview</button></div>
       <span class="divider"></span>
-      <label class="jump-label"><span class="sr-only">Jump to a viewpoint</span><select id="view-select"><option value="entrance">Down the classroom</option><option value="board">ViewBoard & tables</option><option value="workshop">Engineering benches</option><option value="maker">Printer corner</option><option value="window">From the window</option></select></label>
+      <label class="jump-label"><span class="sr-only">Jump to a viewpoint</span><select id="view-select"><option value="entrance">Down The Classroom</option><option value="board">ViewBoard & Tables</option><option value="workshop">Engineering Benches</option><option value="maker">Printer Corner</option><option value="window">From The Window</option></select></label>
       <button id="settings-toggle" class="icon-button" aria-expanded="false" aria-controls="settings">Scene <span aria-hidden="true">☷</span></button>
       <button id="fullscreen" class="icon-button" aria-label="Toggle fullscreen">⛶</button>
     </nav>
+    <div id="build-identity" role="note" aria-label="Build Identity">Live Development — Unpackaged</div>
     <footer><span id="hint">WASD / arrows · drag to look · Shift to move faster</span><span>PHOTO-INFORMED RECONSTRUCTION</span></footer>
     <div id="message" role="status" aria-live="polite"></div>
     <div id="error" role="alert" hidden><h2>We couldn’t start the 3D view.</h2><p>This walkthrough needs WebGL 2. Try a current browser with hardware acceleration enabled.</p></div>

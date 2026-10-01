@@ -1,0 +1,17 @@
+{
+  "version": "0.1.1",
+  "codename": "First Light",
+  "codenameSlug": "First-Light",
+  "status": "development",
+  "compatibility": "First Light 0.1.x; metre units and anchor names retained. Design anchor follows corrected desk placement. No saved-game format.",
+  "id": "0.1.1_First-Light_pr-3_build-004_20261001T014014Z_g28e31ff0fbf0_web-glb-godot-source",
+  "scope": "pr-3",
+  "pr": 3,
+  "ordinal": 4,
+  "utc": "2026-10-01T01:40:14.827Z",
+  "revision": "28e31ff0fbf06ee5fd9fe58cb499f0ef0d757f9a",
+  "prHead": null,
+  "dirty": false,
+  "sourceFingerprint": "b34f499c62d392106756baef86b5151e744e1deede47728a64cabd12c726ad4a",
+  "target": "web-glb-godot-source"
+}

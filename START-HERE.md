@@ -12,7 +12,8 @@ copy `godot/classroom/` into your own project and instance `classroom.tscn`.
 For other engines, import `public/assets/classroom.glb`; the companion JSON
 contains collision boxes and attachment points. See `docs/INTEGRATION.md`.
 
-This is First Light v0.1.0: a stylized reconstruction from your photos, with
-estimated dimensions. Source, verification details and calibration notes are
-included. The recovered files are saved in GitHub PR #1; see
-`docs/REPOSITORY-STATUS.md` for the current handoff and verification limits.
+The current review is First Light v0.1.1 (development), with four desks in two pairs,
+updated door hardware and extinguisher, the supplied finished quote posters, and
+rainbow string lights. Dimensions remain estimates. See `docs/CURRENT-REVIEW.md`
+for the exact build and verification limits; the accepted 0.1.0 release and its
+historical artifacts remain preserved in Git history. No deployment is part of this draft.
