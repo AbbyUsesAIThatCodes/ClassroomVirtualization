@@ -13,6 +13,13 @@
       "revision": "477fe2d4b138410dd033168e5f36360d6f55772b",
       "target": "web-glb-godot-source",
       "status": "reserved"
+    },
+    {
+      "scope": "pr-3",
+      "ordinal": 3,
+      "revision": "6b3cc9012f7d2e9e8f38c8a656858c041b0909d4",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
     }
   ]
 }

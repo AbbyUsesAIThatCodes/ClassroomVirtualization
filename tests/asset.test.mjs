@@ -22,10 +22,11 @@ test('GLB validates, embeds resources, preserves anchors, and matches Godot copy
   assert.deepEqual(room.extras.build,layout.build);
   assert.deepEqual(layout.build,JSON.parse(await readFile('godot/build-manifest.json','utf8')));
   assert.equal(layout.colliders.length,46);
-  for(const p of POSTER_LAYOUT){const n=json.nodes.find(n=>n.name==='QuotePoster_'+String(p.page).padStart(2,'0'));assert.deepEqual(n.translation,[p.x,p.y,p.z]);assert.equal(n.extras.cardinal,p.cardinal);}
-  assert.deepEqual(json.nodes.find(n=>n.name==='RearExitDoor').translation,[SOUTH_DOOR.x,0,SOUTH_DOOR.z]);
-  assert.deepEqual(json.nodes.find(n=>n.name==='FrontExitDoor').translation,[-2.15,0,-6.96]);
-  assert.deepEqual(json.nodes.filter(n=>n.name.startsWith('SouthWall')).map(n=>n.name).sort(),['SouthWallEastSpan','SouthWallLintel','SouthWallWestPier']);
+  const position=n=>n.matrix?n.matrix.slice(12,15):(n.translation||[0,0,0]);
+  for(const p of POSTER_LAYOUT){const n=json.nodes.find(n=>n.name==='QuotePoster_'+String(p.page).padStart(2,'0'));assert.deepEqual(position(n),[p.x,p.y,p.z]);assert.equal(n.extras.cardinal,p.cardinal);}
+  assert.deepEqual(position(json.nodes.find(n=>n.name==='RearExitDoor')),[SOUTH_DOOR.x,0,SOUTH_DOOR.z]);
+  assert.deepEqual(position(json.nodes.find(n=>n.name==='FrontExitDoor')),[-2.15,0,-6.96]);
+  assert.deepEqual(json.nodes.filter(n=>n.name?.startsWith('SouthWall')).map(n=>n.name).sort(),['SouthWallEastSpan','SouthWallLintel','SouthWallWestPier']);
   assert.deepEqual(data,await readFile('godot/classroom/classroom.glb'));
   console.log(`GLB: ${report.issues.numErrors} errors, ${report.issues.numWarnings} warnings; ${data.length} bytes`);
 });
