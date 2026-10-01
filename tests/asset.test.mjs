@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { validateBytes } from 'gltf-validator';
-import { ANCHORS } from '../src/layout.js';
+import { ANCHORS, POSTER_LAYOUT, SOUTH_DOOR } from '../src/layout.js';
 test('GLB validates, embeds resources, preserves anchors, and matches Godot copy',async()=>{
   const data=await readFile('public/assets/classroom.glb');
   const report=await validateBytes(new Uint8Array(data),{uri:'classroom.glb',maxIssues:20});
@@ -21,7 +21,11 @@ test('GLB validates, embeds resources, preserves anchors, and matches Godot copy
   const room=json.nodes.find(n=>n.name==='NCH_Classroom');
   assert.deepEqual(room.extras.build,layout.build);
   assert.deepEqual(layout.build,JSON.parse(await readFile('godot/build-manifest.json','utf8')));
-  assert.equal(layout.colliders.length,43);
+  assert.equal(layout.colliders.length,46);
+  for(const p of POSTER_LAYOUT){const n=json.nodes.find(n=>n.name==='QuotePoster_'+String(p.page).padStart(2,'0'));assert.deepEqual(n.translation,[p.x,p.y,p.z]);assert.equal(n.extras.cardinal,p.cardinal);}
+  assert.deepEqual(json.nodes.find(n=>n.name==='RearExitDoor').translation,[SOUTH_DOOR.x,0,SOUTH_DOOR.z]);
+  assert.deepEqual(json.nodes.find(n=>n.name==='FrontExitDoor').translation,[-2.15,0,-6.96]);
+  assert.deepEqual(json.nodes.filter(n=>n.name.startsWith('SouthWall')).map(n=>n.name).sort(),['SouthWallEastSpan','SouthWallLintel','SouthWallWestPier']);
   assert.deepEqual(data,await readFile('godot/classroom/classroom.glb'));
   console.log(`GLB: ${report.issues.numErrors} errors, ${report.issues.numWarnings} warnings; ${data.length} bytes`);
 });

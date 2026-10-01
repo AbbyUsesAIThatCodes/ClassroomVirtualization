@@ -61,7 +61,7 @@ silently change torque, length or mass calculations when changing visual scale.
    `res://classroom/`. Keep these paths, or update the external resource in the
    `.tscn` when relocating it.
 2. Let Godot import `classroom.glb`.
-3. Drag `classroom/classroom.tscn` into your game scene. This wrapper adds 44 simple
+3. Drag `classroom/classroom.tscn` into your game scene. This wrapper adds 47 simple
    collision shapes and six native `Marker3D` anchors to the portable visual model.
 4. Supply your game's camera, `WorldEnvironment` and lights.
 5. Add the activity beneath an anchor:

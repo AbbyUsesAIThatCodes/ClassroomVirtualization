@@ -21,6 +21,9 @@ try{
  await page.evaluate(()=>window.classroomQA.setPose([1.05,1.65,1.65],[1.05,1.65,-3]));await page.keyboard.down('KeyW');await page.waitForFunction(()=>window.classroomQA.getState().position[2]<1.07,{},{timeout:45000});await page.waitForTimeout(1500);await page.keyboard.up('KeyW');
  // At the slow-frame cap a rejected movement step may leave up to .09 m clearance.
  after=await page.evaluate(()=>window.classroomQA.getState());assert.ok(after.position[2]>=.969&&after.position[2]<1.07,'table stops the controller without penetration');
+ await page.evaluate(()=>window.classroomQA.setPose([-2.85,1.65,6.25],[-2.85,1.65,7]));await page.keyboard.down('KeyW');await page.waitForFunction(()=>window.classroomQA.getState().position[2]>6.6,{},{timeout:45000});await page.waitForTimeout(1200);await page.keyboard.up('KeyW');
+ const doorStop=await page.evaluate(()=>window.classroomQA.getState());assert.ok(doorStop.position[2]>=6.62&&doorStop.position[2]<=6.7151,'closed southwest leaf stops movement without penetration');results.southDoorStop=doorStop.position;
+ await page.evaluate(position=>window.classroomQA.setPose(position,[1.05,1.65,-3]),after.position);
  await page.click('#overview');assert.equal((await page.evaluate(()=>window.classroomQA.getState())).ceiling,false);
  await page.waitForTimeout(350);await page.screenshot({path:'artifacts/classroom-overview.png'});
  await page.click('#walk');const restored=await page.evaluate(()=>window.classroomQA.getState());assert.ok(Math.abs(restored.position[2]-after.position[2])<.02,'return restores walk position');
@@ -39,7 +42,7 @@ try{
  await offline.click('#dismiss');await offline.click('#settings-toggle');assert.equal(await offline.locator('#settings').isVisible(),true,'offline script runs');
  const localDownload=offline.waitForEvent('download');await offline.click('#download-layout');const downloaded=await localDownload;
  assert.ok(downloaded.suggestedFilename().includes('local-browser-'));await downloaded.saveAs('artifacts/offline-layout-export.json');
- const localLayout=JSON.parse(await readFile('artifacts/offline-layout-export.json','utf8'));assert.equal(localLayout.build.parentBuild,manifest.id);assert.equal(localLayout.colliders.length,43);
+ const localLayout=JSON.parse(await readFile('artifacts/offline-layout-export.json','utf8'));assert.equal(localLayout.build.parentBuild,manifest.id);assert.equal(localLayout.colliders.length,46);
  await offline.screenshot({path:'artifacts/classroom-offline.png'});await offline.close();
  const mobile=await run.browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:1});mobile.on('pageerror',e=>errors.push(e.message));
  await mobile.goto(run.url+'/?qa=1');await mobile.waitForFunction(()=>window.classroomQA?.ready);await mobile.click('#dismiss');

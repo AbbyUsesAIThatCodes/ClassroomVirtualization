@@ -21,6 +21,10 @@ The upstream room originally derives from this repository's `1f25638e64861424a52
 - Simplified procedural texture noise and touched sign titles carried across. Retain standalone PBR materials and fonts for its established appearance and GLB export; do not import the lever game's toon shader, camera scaling, apparatus or UI.
 - Preserve all six integration anchor names. Correct `GameAnchor_Design` to the near pair's left desktop: upstream retained a stale location between the new desks. This is an intentional placement correction; consumers should use the regenerated layout rather than hard-coded old coordinates. Metre units, room dimensions and remaining anchor positions are unchanged.
 
+## Owner Playtest Corrections
+
+The October 1 follow-up places the south door in the southwest corner (`x = -2.85`, `z = +6.96`; north is -Z). Its leaf, frame, latch, closer and EXIT sign move together. The south wall and baseboard now have a real opening with side spans and a lintel; the former southeast door location is solid. Collision boxes match the closed leaf and wall segments. The unrelated north door stays at `[-2.15, 0, -6.96]`. Only the south cupboard moves to clear the approach; the counter and printers stay in place. These owner corrections intentionally supersede the upstream source placement. All 38 finished posters now wrap the four walls in a high/low sequence; see [Poster Art](POSTER-ART.md).
+
 ## Reference Limits And Privacy
 
 The upstream author inspected private classroom photographs; this port inspects the actual source and its provenance, not the original photographs. Dimensions remain estimates. The front push bar was owner-requested because the photographs partly obscure that hardware; it is not claimed photo-exact. No source photos, identifying labels, student work or private markings are published. Existing source/history and original recovered artifacts remain available at the baseline revision.

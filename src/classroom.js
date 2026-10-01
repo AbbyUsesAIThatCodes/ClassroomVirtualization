@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { ROOM, BENCHES, TABLES, ANCHORS } from './layout.js';
+import { ROOM, BENCHES, TABLES, ANCHORS, SOUTH_DOOR, POSTER_LAYOUT } from './layout.js';
 import { blockTexture, floorTexture, woodTexture, ceilingTexture, signTexture, clockTexture } from './textures.js';
 import { posterAtlas, posterGeometry, postersReady } from './posters.js';
 import release from '../release.json';
@@ -49,7 +49,17 @@ export function createClassroom() {
   box(right,3.59,1.8,-2.55,.18,3.6,8.9,rightMat);
   box(right,3.59,1.8,5.15,.18,3.6,3.7,material('Right_rear_blocks','#ffffff',{map:blockTexture(3.7,3.6)}));
   box(right,3.59,2.94,2.55,.18,1.32,1.3,M.cream);
-  const back=wall('BackWall',0,7.09,7.36,3.6,.18,7.36);
+  const back=group('BackWall',groups.Architecture);groups.BackWall=back;
+  const backMat=material('BackWall_blocks','#ffffff',{map:blockTexture(7.36,3.6)});
+  const southLeft=SOUTH_DOOR.x-SOUTH_DOOR.width/2,southRight=SOUTH_DOOR.x+SOUTH_DOOR.width/2;
+  // Real southwest aperture; the former southeast door position is solid wall.
+  for(const [name,a,b] of [['SouthWallWestPier',-3.68,southLeft],['SouthWallEastSpan',southRight,3.68]]){
+    box(back,(a+b)/2,1.8,7.09,b-a,3.6,.18,backMat).name=name;
+    block(name,(a+b)/2,7.09,b-a,.18,0,3.6);
+  }
+  box(back,SOUTH_DOOR.x,(3.6+SOUTH_DOOR.height)/2,7.09,SOUTH_DOOR.width,3.6-SOUTH_DOOR.height,.18,backMat).name='SouthWallLintel';
+  block('SouthWallLintel',SOUTH_DOOR.x,7.09,SOUTH_DOOR.width,.18,SOUTH_DOOR.height,3.6);
+  block('RearExitDoor_Closed',SOUTH_DOOR.x,SOUTH_DOOR.z,1.02,.05,0,2.16);
   const front=group('FrontWall',groups.Architecture);groups.FrontWall=front;
   const fm=material('Front_blocks','#ffffff',{map:blockTexture(7,3.6)});
   // True window opening. Frames and blinds sit inside the opening.
@@ -60,8 +70,9 @@ export function createClassroom() {
   box(front,.06,1.98,-7.08,1.04,2.39,.028,M.glass);
   for(let y=.83;y<3.15;y+=.057)box(front,.06,y,-7.015,1.02,.013,.04, y>1.7?M.glass:M.white);
   box(front,.06,.75,-6.89,1.25,.055,.3,M.ivory);
-  for(const [p,x,z,w,d] of [[left,-3.48,0,.04,14],[right,3.48,-2.5,.04,9],[right,3.48,5.15,.04,3.7],[back,0,6.98,7,.04],[front,0,-6.98,7,.04]])box(p,x,.07,z,w,.14,d,M.dark);
-  block('Wall_left',-3.59,0,.18,14.4);block('Wall_front',0,-7.09,7.36,.18);block('Wall_back',0,7.09,7.36,.18);block('Wall_right_front',3.59,-2.55,.18,8.9);block('Wall_right_rear',3.59,5.15,.18,3.7);
+  for(const [p,x,z,w,d] of [[left,-3.48,0,.04,14],[right,3.48,-2.5,.04,9],[right,3.48,5.15,.04,3.7],[front,0,-6.98,7,.04]])box(p,x,.07,z,w,.14,d,M.dark);
+  for(const [a,b] of [[-3.5,southLeft],[southRight,3.5]])box(back,(a+b)/2,.07,6.98,b-a,.14,.04,M.dark);
+  block('Wall_left',-3.59,0,.18,14.4);block('Wall_front',0,-7.09,7.36,.18);block('Wall_right_front',3.59,-2.55,.18,8.9);block('Wall_right_rear',3.59,5.15,.18,3.7);
   // Shallow visible preparation room at the side doorway.
   const store=group('PrepRoom',groups.Architecture);
   box(store,4.05,-.03,2.55,1.15,.06,1.3,M.ivory);box(store,4.6,1.35,2.55,.1,2.7,1.4,M.cream);
@@ -85,7 +96,7 @@ export function createClassroom() {
     box(g,-.12,2.04,.07,.47,.08,.06,M.steel);
     picture(g,0,2.4,.08,.53,.22,signTexture('EXIT',[],'#ba4549','exit'),0,false);
   }
-  door(front,-2.15,-6.96,0,true);door(back,2.55,6.96,Math.PI);
+  door(front,-2.15,-6.96,0,true);door(back,SOUTH_DOOR.x,SOUTH_DOOR.z,Math.PI);
   const ceiling=group('Ceiling',groups.Architecture);groups.Ceiling=ceiling;
   const cm=material('Acoustic_ceiling','#ffffff',{map:ceilingTexture()});box(ceiling,0,3.65,-1.1,7.18,.12,11.8,cm).castShadow=false;
   box(ceiling,0,3.125,4.88,7.15,.95,.2,M.cream).castShadow=false;
@@ -161,7 +172,8 @@ export function createClassroom() {
   rack(-3.04,4.42,Math.PI/2);rack(2.99,4.88,Math.PI/2);
   function cabinet(x,z,w,h,d){const g=group('Storage_cabinet',groups.Furniture);g.position.set(x,0,z);box(g,0,h/2,0,w,h,d,M.oak);for(const xx of [-w*.25,w*.25]){box(g,xx,h/2,d*.5+.016,w*.48,h-.06,.025,M.oak);box(g,xx>0?.04:-.04,h*.52,d*.5+.04,.018,.16,.025,M.steel);}block('Cabinet',x,z,w,d);return g;}
   cabinet(2.8,-6.47,.72,2.04,.64);
-  const cupboard=cabinet(-2.63,6.55,.81,2.1,.65);cupboard.traverse(o=>{if(o.isMesh&&o.material===M.oak)o.material=M.ivory;});
+  // Clear the corrected southwest doorway; keep the cupboard in the south nook.
+  const cupboard=cabinet(2.3,6.55,.81,2.1,.65);cupboard.name='South_storage_cabinet';cupboard.traverse(o=>{if(o.isMesh&&o.material===M.oak)o.material=M.ivory;});
   const printerBench=group('Printer_counter',groups.Furniture);box(printerBench,-.3,.78,6.6,3.9,.07,.73,M.dark);
   for(const x of [-2.12,-.2,1.53])box(printerBench,x,.38,6.6,.055,.76,.66,M.dark);box(printerBench,-.3,.27,6.6,3.88,.04,.65,M.dark);block('Printer_counter',-.3,6.6,3.9,.73);
   for(let i=0;i<4;i++){
@@ -189,15 +201,14 @@ export function createClassroom() {
   // User-supplied finished wall art; source classroom photos and student work remain excluded.
   const decor=groups.Decor;
   const posterM=material('User_Quote_Posters','#ffffff',{map:posterAtlas,roughness:.9});
-  for(let i=0;i<38;i++){
-    const page=i+1,row=Math.floor(i/19),column=i%19;
+  for(const {page,x,y,z,width,rotation,wall,cardinal} of POSTER_LAYOUT){
     const g=group('QuotePoster_'+String(page).padStart(2,'0'),decor);
-    g.position.set(-3.473,row===0?2.17:1.61,-5.7+column*.57);g.rotation.y=Math.PI/2;
-    g.userData={wall:'left',sourcePage:page,source:'Quotes Document.pdf'};
-    mesh(posterGeometry(page),posterM,[0,0,0],[1,1,1],g);
+    g.position.set(x,y,z);g.rotation.y=rotation;
+    g.userData={wall,cardinal,sourcePage:page,source:'Quotes Document.pdf'};
+    mesh(posterGeometry(page,width),posterM,[0,0,0],[1,1,1],g);
   }
   picture(decor,3.47,2.39,-2.7,1.55,.19,signTexture('Think  •  Build  •  Share',[],'#547f73'),-Math.PI/2,false);
-  picture(decor,-.3,1.91,6.974,3.72,1.28,signTexture('The Maker Corner',['Imagine.   Prototype.   Try again.'], '#a17c51'),Math.PI);
+  picture(decor,-.3,1.54,6.974,1.55,.28,signTexture('The Maker Corner',['Imagine.   Prototype.   Try again.'], '#a17c51'),Math.PI);
   // Fire extinguisher and wall dispensers near preparation doorway.
   const extinguisher=group('FireExtinguisher',decor);extinguisher.position.set(3.35,.99,1.55);extinguisher.rotation.y=-Math.PI/2;
   const fireRed=material('Extinguisher_red','#d63d39');
