@@ -12,6 +12,16 @@ test('GLB validates, embeds resources, preserves anchors, and matches Godot copy
   assert.ok(json.images.every(i=>i.bufferView!==undefined),'all textures must be embedded');
   assert.ok(json.buffers.every(b=>!b.uri),'no external buffer');
   assert.ok(!json.nodes.some(n=>n.name==='ExampleLeverActivity'),'game example must not leak into asset');
+  assert.equal(json.nodes.filter(n=>/^Desk_Pair_\d_\d$/.test(n.name)).length,4);
+  assert.equal(json.nodes.filter(n=>/^QuotePoster_\d\d$/.test(n.name)).length,38);
+  assert.ok(!json.nodes.some(n=>n.name==='QuotePoster_39'));
+  assert.ok(json.nodes.some(n=>n.name==='CurvedHose'));
+  assert.equal(json.materials.filter(m=>m.name.startsWith('Fairy_bulb_')).length,6);
+  const layout=JSON.parse(await readFile('public/assets/classroom-layout.json','utf8'));
+  const room=json.nodes.find(n=>n.name==='NCH_Classroom');
+  assert.deepEqual(room.extras.build,layout.build);
+  assert.deepEqual(layout.build,JSON.parse(await readFile('godot/build-manifest.json','utf8')));
+  assert.equal(layout.colliders.length,43);
   assert.deepEqual(data,await readFile('godot/classroom/classroom.glb'));
   console.log(`GLB: ${report.issues.numErrors} errors, ${report.issues.numWarnings} warnings; ${data.length} bytes`);
 });

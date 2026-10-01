@@ -1,4 +1,4 @@
-# Use the classroom in a game
+# Use The Classroom In A Game
 
 The environment and walkthrough are separate. The room owns geometry, materials,
 named anchors and collision data. The host game owns its camera, input, activity,
@@ -61,7 +61,7 @@ silently change torque, length or mass calculations when changing visual scale.
    `res://classroom/`. Keep these paths, or update the external resource in the
    `.tscn` when relocating it.
 2. Let Godot import `classroom.glb`.
-3. Drag `classroom/classroom.tscn` into your game scene. This wrapper adds 47 simple
+3. Drag `classroom/classroom.tscn` into your game scene. This wrapper adds 44 simple
    collision shapes and six native `Marker3D` anchors to the portable visual model.
 4. Supply your game's camera, `WorldEnvironment` and lights.
 5. Add the activity beneath an anchor:
@@ -80,8 +80,7 @@ To run the included example, import `godot/project.godot` and press F6 on
 `demo/walkthrough.tscn`, or F5 from anywhere. Click to look, WASD/arrow keys to walk,
 Shift to move faster, Escape to release the mouse, R to return to the entrance.
 The native demo is designed for keyboard/mouse; touch controls belong to the
-browser walkthrough. Native headless import and instantiation were tested with
-Godot 4.5.1. An online-editor import has not been separately tested.
+browser walkthrough. Fresh native validation is recorded in CURRENT-REVIEW.md. Historical 0.1.0 checks used Godot 4.5.1. No Godot executable export or online-editor import is claimed.
 
 ## Attachment points
 
@@ -104,15 +103,14 @@ Placements and anchors live in `src/layout.js`; architecture and furniture are
 constructed in `src/classroom.js`. Most dimensions of architecture are explicit
 in the builder, so editing the `ROOM` metadata alone does not resize geometry.
 Edit both if changing room dimensions. Textures are procedurally drawn in
-`src/textures.js`; no photograph is needed at runtime.
+`src/textures.js`; the approved supplied poster portraits are embedded in `src/assets/quote-posters-data.js`. No private source classroom photograph is needed at runtime. Await the returned `classroom.ready` promise before rendering or exporting a newly created procedural room so the embedded poster atlas is decoded.
 
 After changing geometry, materials or anchors:
 
 ```sh
 npm ci
 npx playwright install chromium
-npm run export
-npm run build
+npm run review
 npm test
 npm run test:browser
 ```
@@ -121,3 +119,5 @@ npm run test:browser
 collision scene. Commit all of these together. The walkthrough generates its
 geometry from the source; ordinary `npm run build` deliberately does not
 regenerate the importable GLB. Avoid stale asset exports when editing the model.
+
+The design anchor keeps its name but moves to the corrected desktop. See CLASSROOM-PROVENANCE.md for this intentional coordinate correction. All 38 poster nodes preserve their PDF page numbers.

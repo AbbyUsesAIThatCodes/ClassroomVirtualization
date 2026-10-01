@@ -1,0 +1,11 @@
+{
+  "attempts": [
+    {
+      "scope": "pr-3",
+      "ordinal": 1,
+      "revision": "d278516b4936631521133febbf06611f67b619b8",
+      "target": "web-glb-godot-source",
+      "status": "reserved"
+    }
+  ]
+}

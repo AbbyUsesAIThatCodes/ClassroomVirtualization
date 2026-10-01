@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { sourceFingerprint } from '../scripts/build-identity.mjs';
+const manifest=JSON.parse(await readFile('dist/build-manifest.json','utf8'));
+const root='review-packages/'+manifest.id;
+const get=async path=>JSON.parse(await readFile(path,'utf8'));
+assert.deepEqual(await get(root+'/site/build-manifest.json'),manifest);
+assert.deepEqual(await get(root+'/godot/build-manifest.json'),manifest);
+assert.equal((await sourceFingerprint()).sha256,manifest.sourceFingerprint);
+assert.ok((await readFile(root+'/site/BUILD-REPORT.txt','utf8')).includes(manifest.id));
+assert.ok((await readFile(root+'/site/Classroom-Walkthrough.html','utf8')).includes(manifest.id));
+assert.deepEqual(await readFile(root+'/site/Classroom-Walkthrough.html'),await readFile('dist/Classroom-Walkthrough.html'));
+assert.deepEqual(await readFile(root+'/site/assets/classroom.glb'),await readFile(root+'/godot/classroom/classroom.glb'));
+assert.deepEqual((await get(root+'/site/assets/classroom-layout.json')).build,manifest);
+console.log('PACKAGE_IDENTITY_OK '+manifest.id);

@@ -3,7 +3,7 @@
 **A walkable, reusable 3D version of the North College Hill / Great Oaks classroom.**
 
 Reconstructed from ten classroom photos, with cream block walls, a tiled ceiling,
-wooden workbenches, gray lab tables, yellow and red stools, the ViewBoard teaching
+wooden workbenches, four pale desks in two pairs, yellow and red stools, the ViewBoard teaching
 wall, light strings, robotics shelves, a teacher nook and four printers.
 
 ![The classroom walkthrough](docs/classroom-preview.jpg)
@@ -46,9 +46,10 @@ GLB. The existing lever-game repositories are not modified.
 
 ## Develop
 
-The scripts below are the recovered original pipeline. Before producing a new
-review/release build, implement the pending [build-identity convention](docs/BUILD_IDENTITY.md).
-The saved HTML and GLB are original artifacts, not new builds from this recovery.
+The current draft is **0.1.1 First Light (development)**, extending the accepted
+0.1.0 milestone with corrected classroom details, supplied quote posters and
+rainbow string lights. Read [Build Identity](docs/BUILD_IDENTITY.md) before producing
+an artifact. [Current Review](docs/CURRENT-REVIEW.md) identifies the exact tested package.
 
 Node 22+:
 
@@ -62,7 +63,7 @@ hostable `dist/` folder and the self-contained HTML. Three.js is bundled locally
 there are no runtime CDN, font, analytics or network requirements.
 
 After changing the model, run `npx playwright install chromium` once, then
-`npm run export` to regenerate GLB, collision scene and manifest files.
+`npm run review` to regenerate GLB, collision scene, browser bundle and identity manifests together. Set `CHROMIUM_EXECUTABLE` to an installed Chromium/Edge binary if needed. All 38 finished poster pages are embedded locally.
 
 ```sh
 npm test
@@ -77,17 +78,16 @@ activity placement, downloads and touch controls. See
 
 ## Publish After Review
 
-This repository includes a manual **Deploy Pages** workflow. After the first PR
-is reviewed and merged, choose **Settings → Pages → Source: GitHub Actions**, then
+This repository includes a manual **Deploy Pages** workflow. Only after the owner approves a future deployment, choose **Settings → Pages → Source: GitHub Actions**, then
 run **Actions → Deploy Pages → Run workflow** from `main`. The preview uses
-relative URLs, so it works under the repository's Pages subpath. A live site is
-not deployed by the initial implementation.
+relative URLs, so it works under the repository's Pages subpath. The previous **0.1.0 First Light** release is already live: PR #1 merged to
+`1f25638e64861424a52f8bf381cea2a247cfe74e` and [Pages run 36637247202](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/actions/runs/36637247202)
+succeeded on September 29, 2026. This draft does not merge or deploy anything.
 
-Recovered source and assets are saved on `rowan/classroom-first-light` in
-[PR #1](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/1).
-See the [September 29 recovery report](docs/recovery/2026-09-29.md) for integrity
-checks, remote checkpoints, and remaining limitations. The implementation stays
-on the feature branch pending review; this recovery does not deploy the site.
+See [Repository Status](docs/REPOSITORY-STATUS.md), [source provenance](docs/CLASSROOM-PROVENANCE.md),
+[poster art provenance](docs/POSTER-ART.md), and the historical [recovery report](docs/recovery/2026-09-29.md).
+Older source, HTML, GLB, Godot assets and evidence remain in Git history at the
+baseline revision. Current exports and current review results are identified separately.
 
 ## Next Calibration Pass
 

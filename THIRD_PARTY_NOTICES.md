@@ -1,9 +1,11 @@
-# Third-party notices
+# Third-Party Notices
 
 The classroom geometry, procedural textures, interface and code in this project
-were created for this project. Reference photographs were supplied by the user
+were created for this project. Private source classroom photographs were supplied by the user
 and are not distributed in the repository or runtime assets. Modelled equipment
 is an approximation, not manufacturer-provided CAD.
+
+The user-approved quote-poster artwork is reproduced from pages 1–38 of the supplied `Quotes Document.pdf`. Text and attributions remain as supplied, without accuracy endorsement. Third-party portrait/image licenses are not documented or independently verified; no copyright clearance or new license to those images is asserted. See `docs/POSTER-ART.md` for hashes, page mapping and scope. The original PDF and unfinished page 39 are excluded.
 
 Dependencies (exact versions are locked in `package-lock.json`):
 

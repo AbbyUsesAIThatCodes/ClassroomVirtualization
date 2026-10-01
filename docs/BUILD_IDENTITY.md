@@ -1,63 +1,46 @@
 # Build Identity
 
-## Recovery Status
+## Authoritative Records And Allocation
 
-This PR preserves the existing **0.1.0 First Light** artifacts from September 25,
-2026. It does not generate a new build or assign them a new identity. The original
-Git bundle is damaged; the original build's source SHA, build time, and ordinal
-are not recoverable from the available metadata. Recovery commits identify the
-saved files, not the original build. See [the recovery report](recovery/2026-09-29.md).
+`release.json` is the authoritative release record: **0.1.1 First Light**, development. `package.json` and the root lockfile mirror its version. First Light remains the accepted codename for 0.1.x; PR #1 closed the 0.1.0 recovery milestone before this compatible correction. Anchor names and metre units remain stable; the design anchor follows the corrected desk position. There is no saved-game format.
 
-The owner's September 27 build-identity convention is recorded below for the next
-build-producing change. The recovered pipeline predates it. **Retrofitting the
-pipeline is pending**, not claimed complete by this preservation PR.
+`scripts/build-identity.mjs` reserves an ordinal in tracked `build/ledger.json` under an exclusive file lock, shared by worktrees through the primary checkout. Failed attempts keep reservations. This task is the sole allocator for PR #3. Commit and push the ledger at checkpoints. Another clone/machine must synchronize that ledger and coordinate allocator ownership before using the PR scope; otherwise use an explicit local scope. No distributed counter service is installed.
 
-## Identity Contract
+Set `BUILD_SCOPE=pr-3` only for this known PR, or `local-review` for uncoordinated local work. CI defaults to `local-ci-<run>-<attempt>` so it never invents PR-local ordinals. The lock is never automatically deleted after a timeout; establish that its owning process has stopped before stale-lock recovery.
 
-- Release version: `package.json` → `version`, currently `0.1.0`.
-- Codename: **First Light**, documented in `README.md` for the recovered 0.1.0
-  milestone; safe slug `First-Light`. Preserve this accepted version and name.
-- Compatibility: this is a development `0.y.z` environment. One unit is one metre;
-  integration anchors and the layout/collision JSON are described in
-  `docs/INTEGRATION.md`. No saved-game migration contract or new version bump is
-  introduced by recovery. Document compatibility changes in future feature PRs.
-- Future canonical format:
-  `<version>_<codename-slug>_pr-<number>_build-<ordinal>_<UTC>_g<revision>_<target>`.
-- Future ordinals must be reserved atomically in durable per-PR state, including
-  local attempts. A rerun consumes a new ordinal; a failed attempt keeps its
-  reservation. Allocator implementation is pending.
-- Capture UTC once before bundling/export and propagate one immutable manifest.
-  Retain the full Git SHA, abbreviated display, dirty state and input fingerprint;
-  CI merge builds must retain both built SHA and PR-head SHA.
-- Use an explicit local/main/release scope outside a PR. Never invent a PR number,
-  original timestamp, source revision, or ordinal for a recovered artifact.
-- Copying or retesting an identical artifact preserves its existing identity.
-- Current review artifact: preserved `Classroom-Walkthrough.html` and
-  `public/assets/classroom.glb`; exact SHA-256 values are in the recovery report.
-- Deployed build: no deployment was performed by this recovery. The supplied
-  manual Pages workflow was not invoked.
+Each build captures UTC once after reservation and immediately before metadata injection. The manifest contains full Git SHA, PR head when available in CI, dirty-input state, SHA-256 fingerprint of all source/script/test/native-demo inputs, target, development status, and full ID:
 
-## Identifier Location Inventory
+`<version>_<codename-slug>_<scope>_build-<ordinal>_<UTC>_g<12-character-revision>[-dirty-<fingerprint>]_<target>`
 
-| Surface | Exact Location | Current State | Status |
-| --- | --- | --- | --- |
-| Release Version | `package.json`, `package-lock.json` | 0.1.0 recovered unchanged | Preserved |
-| Codename | `README.md`, `index.html`, `godot/project.godot` | First Light | Preserved |
-| Ordinal Allocation | No existing ledger | Durable per-scope allocator needed | Pending |
-| Build Manifest | No existing manifest | One immutable manifest per invocation needed | Pending |
-| Local Build Console | `scripts/build.mjs`, `scripts/export.mjs`, `scripts/godot-scene.mjs` | Legacy scripts have no full identifier | Pending |
-| Development Server | `scripts/serve.mjs` | Live development labeling needed | Pending |
-| CI Build Console | `.github/workflows/check.yml` | Recovered original workflow; not invoked for this save-only checkpoint | Pending |
-| Deployment Build Console | `.github/workflows/pages.yml` | Manual workflow, not invoked | Pending |
-| Delivered Filenames | `Classroom-Walkthrough.html`, `public/assets/classroom.glb`, `dist/` | Legacy stable names preserved; future enclosing output must carry full ID | Pending |
-| Browser Identity Label | `index.html`, `src/app.js`, preserved HTML | Legacy First Light label; no complete canonical ID | Pending |
-| Godot Identity Label | `godot/project.godot`, `godot/demo/walkthrough.tscn` | Legacy application name; no complete canonical ID | Pending |
-| Reports And Handoff | `docs/recovery/2026-09-29.md`, `docs/REPOSITORY-STATUS.md` | Recovery and historical checks separated | Implemented For Recovery |
-| Build Instructions | `README.md` | Links here before new artifact-producing work | Implemented For Recovery |
-| PR Description | PR #1, `.github/PULL_REQUEST_TEMPLATE.md` | Preservation scope and pending retrofit documented | Implemented For Recovery |
-| Existing Contributor Instructions | None existed in the recovered package | README and PR template expose the rule | N/A |
+The fingerprint excludes generated exports, report text and the allocator ledger to avoid a metadata rebuild loop. `dirty` describes the listed build inputs, not unrelated report edits. Reopening/copying/retesting an artifact keeps its existing identity; a new build invocation reserves another ordinal.
 
-Before delivering the next new build, implement the pending items and verify the
-same complete ID in console output, filename/enclosing folder, embedded manifest,
-prominent UI, and current build report. Check distinct invocation ordinals and
-safe concurrent allocation. Keep old artifacts and their historical evidence.
+## Entry Points
+
+- `npm run review`: one manifest for GLB/layout, Godot source wrapper and web/offline bundle, preserved under `review-packages/<full-ID>/`.
+- `npm run export`: one identified GLB/Godot-source export. It does not bundle a browser preview or export a native executable.
+- `npm run build`: one identified web build. It copies the currently saved assets and does not regenerate their separate export identity; use `review` after model changes.
+- `npm run dev`: visibly labeled **Live Development — Unpackaged**. It does not claim a frozen build identity. A child server used by an export receives that export's manifest.
+- Direct invocation of `scripts/godot-scene.mjs` is rejected; the export entrypoint ensures consistent native and GLB identities.
+- Offline user-triggered downloads receive an explicit unique `local-browser-<UUID>` scope, ordinal 1, export UTC, source revision and `parentBuild`; they never reuse a PR ordinal. Hosted asset downloads reuse their saved export identity.
+
+## Location Inventory
+
+| Surface | Exact Location | Status |
+| --- | --- | --- |
+| Release | `release.json`, `package.json`, `package-lock.json` | Implemented |
+| Counter | `build/ledger.json`, exclusive `build/allocator.lock` | Implemented, one coordinated primary checkout |
+| Immutable Invocation Manifest | `artifacts/builds/<ID>/build-manifest.json` | Implemented |
+| Console And Failure Log | `runBuild()` in `scripts/build-identity.mjs` | Full ID at start/success/failure; CI summary |
+| Web And Offline UI | `src/build-info.js`, `src/app.js`, `index.html#build-identity`, `style.css` | Persistent, selectable, wrapping full ID |
+| GLB And Layout | `src/app.js:exportGLB`, `scripts/export.mjs`, root GLB extras and JSON `build` | Same manifest on unified review builds |
+| Godot UI | `godot/demo/build_identity.gd`, `demo/walkthrough.tscn`, `godot/build-manifest.json` | Visible selectable label; no native executable build claimed |
+| Artifact Names | `review-packages/<ID>/`, matching review ZIP | Stable inner entrypoints preserved |
+| Report | `site/BUILD-REPORT.txt`, `site/build-manifest.json`, invocation report | Derived from manifest |
+| Current Handoff | `docs/CURRENT-REVIEW.md`, `docs/REPOSITORY-STATUS.md`, README, PR #3 | Exact review and deployed baseline kept separate |
+| CI | `.github/workflows/check.yml`, `.github/workflows/pages.yml` call identified build | Draft job skips; no workflow dispatched by this task |
+| Agent And PR Instructions | `AGENTS.md`, `.github/PULL_REQUEST_TEMPLATE.md` | Linked |
+| Historical Artifacts | Baseline `1f25638e64861424a52f8bf381cea2a247cfe74e` and recovery reports | Preserved; unknown original metadata never invented |
+
+## Verification
+
+`tests/build-identity.test.mjs` checks concurrent reservations, independent PR counters and failure retention. Package/browser checks compare the visible label, manifest, filename, report and source fingerprint. Actual attempt identities, current format validation and remaining limits are recorded in Current Review. Retesting and packaging use already-built bytes; they do not silently rebuild them.

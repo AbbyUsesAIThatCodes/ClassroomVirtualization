@@ -1,5 +1,22 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "build": {
+    "version": "0.1.1",
+    "codename": "First Light",
+    "codenameSlug": "First-Light",
+    "status": "development",
+    "compatibility": "First Light 0.1.x; metre units and anchor names retained. Design anchor follows corrected desk placement. No saved-game format.",
+    "id": "0.1.1_First-Light_pr-3_build-001_20261001T002451Z_gd278516b4936-dirty-3109ec5b_web-glb-godot-source",
+    "scope": "pr-3",
+    "pr": 3,
+    "ordinal": 1,
+    "utc": "2026-10-01T00:24:51.892Z",
+    "revision": "d278516b4936631521133febbf06611f67b619b8",
+    "prHead": null,
+    "dirty": true,
+    "sourceFingerprint": "3109ec5b1a7ad844f3394e39ddebd26b12cd855ce576f1ed188ca59bd4b53976",
+    "target": "web-glb-godot-source"
+  },
   "units": "metres",
   "axis": "Y up; window wall -Z",
   "dimensions": {
@@ -34,12 +51,12 @@
     {
       "name": "GameAnchor_Design",
       "position": [
-        1.05,
-        0.931,
-        -0.8
+        0.49750000000000005,
+        0.9325,
+        0
       ],
       "role": "tabletop",
-      "note": "Centre of middle lab table; top surface"
+      "note": "Centre of near pair left desk; top surface"
     },
     {
       "name": "GameAnchor_Skimmer",
@@ -73,7 +90,7 @@
   ],
   "views": {
     "entrance": {
-      "label": "Down the classroom",
+      "label": "Down The Classroom",
       "position": [
         0,
         1.65,
@@ -86,7 +103,7 @@
       ]
     },
     "board": {
-      "label": "ViewBoard & tables",
+      "label": "ViewBoard & Tables",
       "position": [
         -0.3,
         1.65,
@@ -99,7 +116,7 @@
       ]
     },
     "workshop": {
-      "label": "Engineering benches",
+      "label": "Engineering Benches",
       "position": [
         -0.74,
         1.65,
@@ -112,7 +129,7 @@
       ]
     },
     "maker": {
-      "label": "Printer corner",
+      "label": "Printer Corner",
       "position": [
         -0.4,
         1.65,
@@ -125,7 +142,7 @@
       ]
     },
     "window": {
-      "label": "From the window",
+      "label": "From The Window",
       "position": [
         0,
         1.65,
@@ -208,15 +225,6 @@
       "maxX": 4.6499999999999995,
       "minZ": 1.8499999999999999,
       "maxZ": 3.25,
-      "minY": 0,
-      "maxY": 2
-    },
-    {
-      "name": "Prep_cabinet",
-      "minX": 4.205,
-      "maxX": 4.555,
-      "minZ": 2.05,
-      "maxZ": 3.05,
       "minY": 0,
       "maxY": 2
     },
@@ -329,18 +337,18 @@
       "maxY": 0.65
     },
     {
-      "name": "LabTable_1",
-      "minX": -0.02499999999999991,
-      "maxX": 2.125,
-      "minZ": -4.4399999999999995,
-      "maxZ": -3.1599999999999997,
+      "name": "Desk_Pair_1_1",
+      "minX": -0.04249999999999998,
+      "maxX": 1.0375,
+      "minZ": -4.55,
+      "maxZ": -3.05,
       "minY": 0,
       "maxY": 0.95
     },
     {
       "name": "Stool_yellow",
-      "minX": 0.22000000000000003,
-      "maxX": 0.6200000000000001,
+      "minX": 0.29750000000000004,
+      "maxX": 0.6975,
       "minZ": -3.01,
       "maxZ": -2.6099999999999994,
       "minY": 0,
@@ -348,91 +356,73 @@
     },
     {
       "name": "Stool_red",
-      "minX": 1.5000000000000002,
-      "maxX": 1.9000000000000001,
-      "minZ": -3,
-      "maxZ": -2.5999999999999996,
+      "minX": -0.6325000000000001,
+      "maxX": -0.23249999999999998,
+      "minZ": -4.12,
+      "maxZ": -3.7199999999999998,
       "minY": 0,
       "maxY": 0.65
+    },
+    {
+      "name": "Desk_Pair_1_2",
+      "minX": 1.0625,
+      "maxX": 2.1425,
+      "minZ": -4.55,
+      "maxZ": -3.05,
+      "minY": 0,
+      "maxY": 0.95
     },
     {
       "name": "Stool_red",
-      "minX": -0.6099999999999999,
-      "maxX": -0.2099999999999999,
-      "minZ": -3.94,
-      "maxZ": -3.5399999999999996,
+      "minX": 1.4025,
+      "maxX": 1.8025,
+      "minZ": -3.01,
+      "maxZ": -2.6099999999999994,
       "minY": 0,
       "maxY": 0.65
     },
     {
-      "name": "LabTable_2",
-      "minX": -0.02499999999999991,
-      "maxX": 2.125,
-      "minZ": -1.44,
-      "maxZ": -0.16000000000000003,
+      "name": "Desk_Pair_2_1",
+      "minX": -0.04249999999999998,
+      "maxX": 1.0375,
+      "minZ": -0.75,
+      "maxZ": 0.75,
       "minY": 0,
       "maxY": 0.95
     },
     {
       "name": "Stool_yellow",
-      "minX": 0.22000000000000003,
-      "maxX": 0.6200000000000001,
-      "minZ": -0.010000000000000064,
-      "maxZ": 0.38999999999999996,
-      "minY": 0,
-      "maxY": 0.65
-    },
-    {
-      "name": "Stool_yellow",
-      "minX": 1.5000000000000002,
-      "maxX": 1.9000000000000001,
-      "minZ": -5.551115123125783e-17,
-      "maxZ": 0.39999999999999997,
+      "minX": 0.29750000000000004,
+      "maxX": 0.6975,
+      "minZ": 0.79,
+      "maxZ": 1.19,
       "minY": 0,
       "maxY": 0.65
     },
     {
       "name": "Stool_red",
-      "minX": -0.6099999999999999,
-      "maxX": -0.2099999999999999,
-      "minZ": -0.94,
-      "maxZ": -0.54,
+      "minX": -0.6325000000000001,
+      "maxX": -0.23249999999999998,
+      "minZ": -0.32,
+      "maxZ": 0.08000000000000002,
       "minY": 0,
       "maxY": 0.65
     },
     {
-      "name": "LabTable_3",
-      "minX": -0.02499999999999991,
-      "maxX": 2.125,
-      "minZ": 1.5099999999999998,
-      "maxZ": 2.79,
+      "name": "Desk_Pair_2_2",
+      "minX": 1.0625,
+      "maxX": 2.1425,
+      "minZ": -0.75,
+      "maxZ": 0.75,
       "minY": 0,
       "maxY": 0.95
     },
     {
-      "name": "Stool_yellow",
-      "minX": 0.22000000000000003,
-      "maxX": 0.6200000000000001,
-      "minZ": 2.9399999999999995,
-      "maxZ": 3.34,
-      "minY": 0,
-      "maxY": 0.65
-    },
-    {
       "name": "Stool_red",
-      "minX": 1.5000000000000002,
-      "maxX": 1.9000000000000001,
-      "minZ": 2.9499999999999997,
-      "maxZ": 3.35,
-      "minY": 0,
-      "maxY": 0.65
-    },
-    {
-      "name": "Stool_yellow",
-      "minX": -0.6099999999999999,
-      "maxX": -0.2099999999999999,
-      "minZ": 2.01,
-      "maxZ": 2.41,
+      "minX": 1.4025,
+      "maxX": 1.8025,
+      "minZ": 0.79,
+      "maxZ": 1.19,
       "minY": 0,
       "maxY": 0.65
     },

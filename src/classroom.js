@@ -3,11 +3,13 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { ROOM, BENCHES, TABLES, ANCHORS } from './layout.js';
 import { blockTexture, floorTexture, woodTexture, ceilingTexture, signTexture, clockTexture } from './textures.js';
+import { posterAtlas, posterGeometry, postersReady } from './posters.js';
+import release from '../release.json';
 
 /** Standalone environment: no renderer, camera, input, animation loop or game state. */
 export function createClassroom() {
   const root = new THREE.Group(); root.name = 'NCH_Classroom';
-  root.userData = {version:'0.1.0', units:'metres', dimensions:ROOM, reconstruction:'Photo-informed; dimensions estimated'};
+  root.userData = {version:release.version, units:'metres', dimensions:ROOM, reconstruction:'Photo-informed; dimensions estimated'};
   const groups = {}, colliders = [], anchors = {};
   const material = (name,color,extra={}) => {const m=new THREE.MeshStandardMaterial({color,roughness:.8,...extra});m.name=name;return m;};
   const M = {
@@ -184,12 +186,16 @@ export function createClassroom() {
   box(equipment,-2.1,.82,-6.38,1.22,.23,.47,M.ivory,true);box(equipment,-2.1,.92,-6.37,1.03,.022,.38,M.dark);
   block('Front_plotter',.6,-6.44,1.4,.54);block('Charging_cabinet',-.85,-6.45,.65,.56);block('Front_cutter',-2.1,-6.38,1.22,.47);
 
-  // Reconstructed decoration, with generic text and no copied rosters or notes.
+  // User-supplied finished wall art; source classroom photos and student work remain excluded.
   const decor=groups.Decor;
-  picture(decor,-3.478,2.02,-2.5,.65,.45,signTexture('Measure', ['Start at zero.','Look closely.'], '#477d77'),Math.PI/2);
-  picture(decor,-3.478,1.92,1.2,.57,.43,signTexture('Make & Test',['Ideas become evidence.'], '#94704c'),Math.PI/2);
-  for(let i=0;i<11;i++){const z=-5.7+i*.88;picture(decor,-3.475,2.66+(i%3)*.05,z,.17,.23,signTexture('',[],i%2?'#7c8790':'#6d7c73'),Math.PI/2,false);}
-  for(let i=0;i<6;i++)picture(decor,-3.473,1.66,-4.7+i*1.33,.2,.27,signTexture(String(i+1),['Explore'],i%2?'#bd9f3f':'#c3bdaa'),Math.PI/2,false);
+  const posterM=material('User_Quote_Posters','#ffffff',{map:posterAtlas,roughness:.9});
+  for(let i=0;i<38;i++){
+    const page=i+1,row=Math.floor(i/19),column=i%19;
+    const g=group('QuotePoster_'+String(page).padStart(2,'0'),decor);
+    g.position.set(-3.473,row===0?2.17:1.61,-5.7+column*.57);g.rotation.y=Math.PI/2;
+    g.userData={wall:'left',sourcePage:page,source:'Quotes Document.pdf'};
+    mesh(posterGeometry(page),posterM,[0,0,0],[1,1,1],g);
+  }
   picture(decor,3.47,2.39,-2.7,1.55,.19,signTexture('Think  •  Build  •  Share',[],'#547f73'),-Math.PI/2,false);
   picture(decor,-.3,1.91,6.974,3.72,1.28,signTexture('The Maker Corner',['Imagine.   Prototype.   Try again.'], '#a17c51'),Math.PI);
   // Fire extinguisher and wall dispensers near preparation doorway.
@@ -209,11 +215,11 @@ export function createClassroom() {
   box(decor,2.67,.004,3.2,.018,.007,3.0,M.blueTape);box(decor,1.1,.004,4.71,3.16,.007,.018,M.blueTape);
   for(const z of [-5.5,-1.2,3.6]){box(decor,-3.47,.35,z,.018,.09,.06,M.white);box(decor,3.47,.35,z,.018,.09,.06,M.white);}
   const fairy=group('StringLights',decor);groups.StringLights=fairy;
-  const bulbM=['#a0e5ff','#bca3ff','#ffd37d','#9febc3'].map((c,i)=>material('Fairy_bulb_'+i,c,{emissive:c,emissiveIntensity:1.25}));
+  const bulbM=['#ff2028','#ff8300','#ffe000','#16d34d','#168bff','#913dff'].map((c,i)=>material('Fairy_bulb_'+i,c,{emissive:c,emissiveIntensity:.45,toneMapped:false}));
   function garland(a,b,baseY,sag){const points=[];const n=35;
     for(let i=0;i<=n;i++){const t=i/n;points.push(new THREE.Vector3(a[0]+(b[0]-a[0])*t,baseY-Math.sin(t*Math.PI)*sag,a[1]+(b[1]-a[1])*t));}
     const geo=new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points),35,.005,3,false);mesh(geo,M.dark,[0,0,0],[1,1,1],fairy);
-    for(let i=0;i<=n;i+=2){const p=points[i];ball(fairy,p.x,p.y-.015,p.z,.015,bulbM[(i/2)%4]);}
+    for(let i=0;i<=n;i+=2){const p=points[i];ball(fairy,p.x,p.y-.015,p.z,.015,bulbM[(i/2)%bulbM.length]);}
   }
   for(const x of [-3.45,3.45])for(let z=-7;z<4.5;z+=2.3){garland([x,z],[x,Math.min(z+2.3,4.8)],3.07,.38);garland([x,z],[x,Math.min(z+2.3,4.8)],2.65,.23);}
   for(let x=-3.4;x<3.4;x+=1.7){garland([x,6.93],[x+1.7,6.93],2.49,.27);garland([x,-6.93],[x+1.7,-6.93],2.9,.32);}
@@ -221,12 +227,12 @@ export function createClassroom() {
   root.userData.colliders=colliders;
   // Merge sibling primitive meshes, preserving useful furniture and architecture names.
   function batch(g){for(const child of [...g.children])if(child.isGroup)batch(child);
-    const buckets=new Map();for(const child of [...g.children])if(child.isMesh){const key=child.material.uuid+'|'+child.castShadow;const list=buckets.get(key)||[];list.push(child);buckets.set(key,list);}
+    const buckets=new Map();for(const child of [...g.children])if(child.isMesh&&!child.name){const key=child.material.uuid+'|'+child.castShadow;const list=buckets.get(key)||[];list.push(child);buckets.set(key,list);}
     for(const list of buckets.values()){if(list.length<2)continue;const geometries=list.map(m=>{m.updateMatrix();return m.geometry.clone().applyMatrix4(m.matrix);});const geo=mergeGeometries(geometries);if(!geo){geometries.forEach(x=>x.dispose());continue;}
       const m=new THREE.Mesh(geo,list[0].material);m.name=g.name+'_'+list[0].material.name;m.castShadow=list[0].castShadow;m.receiveShadow=true;g.add(m);list.forEach(x=>g.remove(x));geometries.forEach(x=>x.dispose());}
   }
   batch(root);
-  return {root,groups,anchors,colliders,dimensions:ROOM};
+  return {root,groups,anchors,colliders,dimensions:ROOM,ready:postersReady};
 }
 
 export function addClassroomLighting(scene) {
