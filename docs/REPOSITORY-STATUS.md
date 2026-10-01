@@ -8,7 +8,7 @@ PR #1 merged on September 29, 2026. Main is `1f25638e64861424a52f8bf381cea2a247c
 
 ## Current Draft
 
-Issue [#2](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/issues/2) / draft PR [#3](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/3), branch `update/canonical-classroom`, proposes **0.1.1 First Light (development)**. It ports the canonical classroom details and adds the subsequently approved quote posters and rainbow string lights. Read [Current Review](CURRENT-REVIEW.md) for exact source, identity, format status and fresh verification.
+Issue [#2](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/issues/2) / draft PR [#3](https://github.com/AbbyUsesAIThatCodes/ClassroomVirtualization/pull/3), branch `update/canonical-classroom`, proposes **0.1.1 First Light (development)**. It ports the canonical classroom details, adds the approved quote posters and rainbow string lights, and incorporates the owner's playtest corrections: posters around all four walls and the south door in the southwest corner. Read [Current Review](CURRENT-REVIEW.md) for exact source, identity, format status and fresh verification.
 
 The task is review-only: no merge, deployment, workflow dispatch, main push, Pages configuration change or other-repository write. Draft Actions jobs skip; local checks provide evidence. No private classroom photos or student data are included. The supplied poster PDF stays private; its approved finished artwork is documented in [Poster Art](POSTER-ART.md).
 

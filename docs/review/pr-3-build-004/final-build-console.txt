@@ -1,0 +1,4 @@
+BUILD START 0.1.1_First-Light_pr-3_build-004_20261001T014014Z_g28e31ff0fbf0_web-glb-godot-source
+Generated native Godot scene with 47 box colliders and 6 anchors.
+Exported GLB, layout manifest and Godot scene assets.
+BUILD SUCCESS 0.1.1_First-Light_pr-3_build-004_20261001T014014Z_g28e31ff0fbf0_web-glb-godot-source

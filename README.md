@@ -6,7 +6,7 @@ Reconstructed from ten classroom photos, with cream block walls, a tiled ceiling
 wooden workbenches, four pale desks in two pairs, yellow and red stools, the ViewBoard teaching
 wall, light strings, robotics shelves, a teacher nook and four printers.
 
-![The classroom walkthrough](docs/review/pr-3-build-002/classroom-desks.png)
+![The classroom walkthrough](docs/review/pr-3-build-004/classroom-desks.png)
 
 ## Walk Around
 
