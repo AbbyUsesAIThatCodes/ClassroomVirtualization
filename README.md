@@ -1,5 +1,7 @@
 # Our Classroom · First Light
 
+**[Play ClassroomVirtualization Online](https://abbyusesaithatcodes.github.io/ClassroomVirtualization/)**
+
 **A walkable, reusable 3D version of the North College Hill / Great Oaks classroom.**
 
 Reconstructed from ten classroom photos, with cream block walls, a tiled ceiling,
